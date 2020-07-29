@@ -1,0 +1,2871 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GateDocument version="3">
+<!-- The document's features-->
+
+<GateDocumentFeatures>
+<Feature>
+  <Name className="java.lang.String">name</Name>
+  <Value className="java.lang.String">paper3.pdf_PDFX.xml</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">header</Name>
+  <Value className="java.lang.String">Tagpedia: a semantic reference to describe and search for Web resources &lt;/b>
+Francesco Ronzano Institute for Informatics and
+Telematics (IIT) - CNR Via Moruzzi, 1
+Pisa, Italy francesco.ronzano@iit.cnr.it
+Andrea Marchetti Institute for Informatics and
+Telematics (IIT) - CNR Via Moruzzi, 1
+Pisa, Italy andrea.marchetti@cnr.it
+Maurizio Tesconi Institute for Informatics and
+Telematics (IIT) - CNR Via Moruzzi, 1
+Pisa, Italy maurizio.tesconi@iit.cnr.it</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">gate.SourceURL</Name>
+  <Value className="java.lang.String">created from String</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">MimeType</Name>
+  <Value className="java.lang.String">text/xml</Value>
+</Feature>
+</GateDocumentFeatures>
+<!-- The document content area with serialized nodes -->
+
+<TextWithNodes><Node id="0"/>
+  <Node id="3"/>
+    <Node id="8"/>f8d2bb04c0532bc738377b23b199add8b5947a65f532bc86c32bcddc87ee5bb1<Node id="72"/>
+    <Node id="77"/>i6d<Node id="80"/>
+    <Node id="85"/>http://dx.doi.org/10.1007/3-540-70894-4_5<Node id="126"/>
+    <Node id="131"/>Name identification was not possible. <Node id="169"/>
+  <Node id="172"/>
+  <Node id="175"/>
+    <Node id="180"/>
+      <Node id="187"/>
+        <Node id="196"/>Tagpedia: a semantic reference to describe and search for Web resources<Node id="267"/>
+      <Node id="274"/>
+      <Node id="281"/>Francesco Ronzano Andrea Marchetti Institute for Informatics and Institute for Informatics and Telematics (IIT) CNR Telematics (IIT) CNR Via Moruzzi, 1 Via Moruzzi, 1 Pisa, Italy Pisa, Italy <Node id="472"/>francesco.ronzano@iit.cnr.it<Node id="500"/> <Node id="501"/>andrea.marchetti@cnr.it<Node id="524"/>
+      <Node id="531"/>Nowadays the Web represents a growing collection of an enormous amount of contents where the need for better ways to find and organize the available data is becoming a fundamental issue, in order to deal with information overload. Keyword based Web searches are actually the preferred mean to seek for contents related to a specific topic. Search engines and collaborative tagging systems make possible the search for information thanks to the association of descriptive keywords to Web resources. All of them show problems of inconsistency and consequent reduction of recall and precision of searches, due to polysemy, synonymy and in general all the different lexical forms that can be used to refer to a particular meaning. A possible way to face or at least reduce these problems is represented by the introduction of semantics to characterize the contents of Web resources: each resource is described by one or more concepts instead of simple and often ambiguous keywords. To support these task the availability of a global semantic resource of reference is fundamental. On the basis of our past experience with the semantic tagging of Web resources and the SemKey Project, we are developing Tagpedia, a general-domain ”encyclopedia” of tags, semantically structured for generating semantic descriptions of contents over the Web, created by mining Wikipedia. In this paper, starting from an analysis of the weak points of non-semantic keyword based Web searches, we introduce our idea of semantic characterization of Web resources describing the structure and organization of Tagpedia. We introduce our first realization of Tagpedia, suggesting all the possible improvements that can be carried out in order to exploit its full potential.<Node id="2274"/>
+      <Node id="2281"/>
+        <Node id="2290"/>Categories and Subject Descriptors<Node id="2324"/>
+      <Node id="2331"/>
+      <Node id="2338"/>H.4.m [Information Systems]: Miscellaneous; D.2 [Software]: Software Engineering<Node id="2418"/>
+      <Node id="2425"/>
+        <Node id="2434"/>General Terms<Node id="2447"/>
+      <Node id="2454"/>
+      <Node id="2461"/>semantic resource, knowledge organization, semantic web<Node id="2516"/>
+      <Node id="2523"/>
+        <Node id="2532"/>Keywords<Node id="2540"/>
+      <Node id="2547"/>
+      <Node id="2554"/>semantics, web, social, wikipedia, data mining Copyright is held by the Authors. Copyright transfered for publishing online and a conference CD ROM. SWKM’2008: Workshop on Social Web and Knowledge Management @ WWW 2008 , April 22, 2008, Beijing, China.<Node id="2806"/>
+      <Node id="2813"/>Maurizio Tesconi Institute for Informatics and Telematics (IIT) CNR Via Moruzzi, 1 Pisa, Italy <Node id="2908"/>maurizio.tesconi@iit.cnr.it<Node id="2935"/>
+    <Node id="2940"/>
+    <Node id="2945"/>
+      <Node id="2952"/>
+        <Node id="2961"/>1. INTRODUCTION: KEYWORD BASED SEARCHES<Node id="3000"/>
+      <Node id="3007"/>
+      <Node id="3014"/>Currently, keyword based Web searches are the preferred way to seek for resources of interest over the Web. Each resource, usually identified by its URL, can be accessed by one or more keywords describing its content. The most widespread methods to explore links between Web resources and keywords are the exploitation of a search engine or the access to a collaborative tagging service (see <Node id="3406"/>Figure 1<Node id="3414"/> ). Search engines like Google, Yahoo, Ask and so on are examples of automated information extraction systems: they analyze the data and the structure of Web contents as well as the search behaviour of users and the frequency of usage of different search strings to collect the most appropriate keywords that can be used to access a Web resource (see the lower portion of <Node id="3786"/>Figure 1<Node id="3794"/> ). On the other side, collaborative tagging systems like delicious, Flickr, YouTube and Technocrati rely upon user contribution. They are examples of social classification systems: each person who belongs to the community of users of a collaborative tagging system describes Web resources of interest by means of one or more freely chosen keywords, called tags. All the tags associated to Web resources are collected and exploitable by every user in order to find many resources of interest. A popularity value is usually associated to each tag describing a Web resource to point out the number of times it has been chosen to characterize that resource and consequently the importance of the tag itself among those related to the specific resource (see the upper portion of <Node id="4569"/>Figure 1<Node id="4577"/> ). Even if they are very popular, keyword based Web search approaches show many weak points in managing language expressivity. Many keywords can identify distinct concepts (polysemy): as a consequence the precision of search results decreases. Moreover if we don’t search for a common sense of that keyword, it is often very difficult to explore the search results space so as to find Web resources of interest among those retrieved. For example, let us suppose that we want to find all the resources dealing with ’ajax’ intended as the Greek hero: choosing ’ajax’ as search text string, there are no links related to mythology among the first 30 search results of Google. If we better specify the search string in order to solve the problem, we partition the space of relevant search results depending on the particular word added to ’ajax’ to disambiguate its meaning. For instance, depending on the addition of the word ’hero’ or the word ’mythology’ to ’ajax’ in the search string, considering<Node id="5575"/> the first 10 search results shown by Google, only two of them are present in both cases. Besides polysemy, also synonymy affects precision and recall of keyword based Web searches. In fact, when a specific meaning can be accessed through two or more keywords, the set of search results is different depending on the particular keyword chosen. Moreover, the different level of precision and the many possible users points of view that can be considered describing a particular resource, often cause a considerable loss of quality of Web searches. For a deeper analysis of all the factors that affect efficiency and effectiveness of keyword based Web search systems see [ <Node id="6246"/>4<Node id="6247"/> ] [ <Node id="6252"/>10<Node id="6254"/> ] [ <Node id="6259"/>12<Node id="6261"/> ] [ <Node id="6266"/>25<Node id="6268"/> ]. In order to face the different drawbacks of the systems just analyzed, many distinct methods have been applied. The aggregation of search results from different search engines and their post elaboration is experimenting a growing diffusion. Systems like Vivisimo [ <Node id="6537"/>15<Node id="6539"/> ], Grokker [ <Node id="6553"/>18<Node id="6555"/> ] and Kartoo [ <Node id="6571"/>19<Node id="6573"/> ] are meta search engines. They collect search results from other search engines and group them exploiting, for example, the category hierarchy of Yahoo and Wikipedia (Grokker) or creating clusters of similar search results and characterizing each of them by one or more additional keywords (Vivisimo). They also display search results cartographically through very expressive maps that connect the most relevant resources to the most used keywords (Kartoo). Also considering tagging systems, we can find many proposals to better organize search results to improve their quality and the effectiveness of the search. FolkRank [ <Node id="7201"/>5<Node id="7202"/> ] is an algorithm created to rank search results in a tagging system, calculating a ranking value for each of them and thus evaluating their relevance. Also user profile is exploited in order to adapt ranking calculation to the information needs of every single user. The rest of this paper is organized as follows. In Section 2 we describe our idea of semantic characterization of Web<Node id="7588"/> resources, underlining the need for a general-domain semantic resource of reference in order to support this task, taking into account also our past experience with the semantic tagging and SemKey. In Section 3 we introduce Tagpedia, the semantic resource of reference we have created by mining Wikipedia, explaining its organization and structure (Subsection 3.1). In Section 4 we describe how Tagpedia can be utilized, describing the Tagpedia Web API and showing all the possible improvements to Tagpedia to exploit its full potential. Conclusions are described in Section 5.<Node id="8166"/>
+      <Node id="8173"/>.<Node id="8174"/>
+      <Node id="8181"/>
+        <Node id="8190"/>
+        <Node id="8199"/>Figure 1: Two ways to associate keywords to resources<Node id="8252"/>
+      <Node id="8259"/>
+      <Node id="8266"/>
+        <Node id="8275"/>2. FROM KEYWORDS TO CONCEPTS: SEMANTIC CHARACTERIZATION<Node id="8330"/>
+        <Node id="8339"/>We can solve, or at least substantially reduce, Web resources organization and classification problems by adding a further level of completeness in their characterization: the semantics. Instead of relying on post processing of search results, we can directly semantically describe resources thanks to their association with one or more properly chosen concepts. In this way we extend the characterization of resources introducing the semantic level: each resource (R) is described by one or more concepts (C) and in turn each concept can be accessed through one or more keywords (K) (see <Node id="8928"/>Figure 2<Node id="8936"/> ). When we search for some informaton of interest, we can better specify our informative needs and we can easily and effectively access relevant results thanks to the support and the exploitation of the collection of concepts used to describe Web resources, referred to as semantic resource in what follows.<Node id="9244"/>
+        <Node id="9253"/>
+          <Node id="9264"/>
+          <Node id="9275"/>Figure 2:<Node id="9284"/>
+        <Node id="9293"/>
+        <Node id="9302"/>Relations between resources, keywords and concepts<Node id="9352"/>
+        <Node id="9361"/>This way of improving Web contents organization represents an attempt to realize the semantic description of information that stands at the basis of the Semantic Web vision. At present there are many proposal of semantic classification methods for Web contents. FolksAnnotation [ <Node id="9641"/>13<Node id="9643"/> ], for instance, tries to extract the tags that describe a Web resource from a collaborative tagging system, automatically mapping them to the corresponding concepts of a predefined domain ontology. Such kind of systems usually require a strongly and well organized ontological frame of reference that is difficult to realize; they have not provided significant improvements in comparison with the classical keyword based methodologies. A different approach is those exploited by systems like Semantic Halo [ <Node id="10153"/>3<Node id="10154"/> ]: it improves tag based search systems adding semantic information without relying on ontologies. Analyzing co-occurrences and frequencies of<Node id="10297"/> tags, Semantic Halo algorithm extracts groups of tags useful to better specify and drive user search, like more general or more specific ones or group of keywords defining a particular naming of the selected tag. Not enough experimental data on the effectiveness and usefulness of this method to improve tag based searches is currently available. Summarizing, a strong and widespread infrastructure that organizes and provides access to Web resources on the basis of semantic classificatory information is still absent.<Node id="10817"/> During the first half of 2007, we have tried to realize the possibility to semantically describe Web resources developing SemKey [ <Node id="10949"/>4<Node id="10950"/> ], a semantic collaborative tagging system. It extends current tagging systems allowing to characterize resources by referring to concepts. Each user can point out and describe Web resources of interest: starting from a freely chosen tag, he can disambiguate it thanks to the support of Wikipedia [ <Node id="11250"/>14<Node id="11252"/> ] and WordNet [ <Node id="11269"/>17<Node id="11271"/> ] in order to identify one or more defined concepts. In this way he produces a semantic assertion that is the description of a specific feature of Web resources through one or more chosen concepts. Thus we can potentially overcome the limits in the description of Web resources related to the complexity of language, exploiting their semantic characterization as well as the semantic relations between concepts present in WordNet and Wikipedia. We have implemented a working prototype of SemKey; by analyzing the usage patterns and the semantic classification support provided by our system, we have identified two key factors that need to be improved in order to really make possible semantic characterization of Web resources, as described in the previous part of this Section. Both Wikipedia and WordNet, even if they show important features to support the semantic description of Web resources, are weakened by relevant lacks. WordNet presents a rich set of parts of speech and a strongly structured set of relations between them, but it lacks many data useful to support proper names disambiguation and it is not collaboratively edited. Wikipedia is an encyclopedia so its content is composed mainly by a very rich set of names along with their extended descriptions. Thus Wikipedia has strong proper names coverage and it has been proposed as a named entity disambiguation resource in [ <Node id="12665"/>7<Node id="12666"/> ] and [ <Node id="12675"/>8<Node id="12676"/> ]; it is also continuously updated, but lacks a structured set of relations between the concepts described, even if its documents are interconnected by a huge number of links and loosely classified through categories. As a consequence the semantic resources considered are in some way complementary, but they have been built and structured for purposes different from the semantic characterization over the Web. In order to better support this task we need a semantic resource built and structured ad hoc, which is still absent: it must feature all the advantages of those just analyzed, removing pointless informative contents. Moreover, a great limit to the usability of SemKey and to an easy definition of new semantic metadata is represented by the different steps users must carry out to compose a semantic assertion. This often discourages them from creating semantic metadata. Some sort of automation is necessary in order to speed up the tag disambiguation process or to execute it through automated procedures.<Node id="13696"/>
+      <Node id="13703"/>
+      <Node id="13710"/>
+        <Node id="13719"/>3. TAGPEDIA: A GENERAL DOMAIN SEMANTIC RESOURCE OF REFERENCE<Node id="13779"/>
+        <Node id="13788"/>Starting from the need for a global semantic resource exploitable as a reference to describe Web contents and therefore comprehensive and updated, we have proposed a possible solution to this demand, designing and building Tagpedia. It is a semantic organization and classification of tags, intended as words or in general brief textual expressions, that people may use to describe Web Resources. Tagpedia is based on the model of termconcept networks [ <Node id="14242"/>11<Node id="14244"/> ], structured ad hoc to support the semantic characterization of Web contents and initially populated exploiting Wikipedia data. In particular we have tuned a new way of mining Wikipedia to extract the information needed to build Tagpedia so as to support concept based descriptions of Web resources also through tag disambiguation. We have chosen Wikipedia as the starting point because it represents the most rich and constantly updated encyclopedic reference over the Web with a huge set of semantic contents included, even if not explicitly exposed and easily accessible. During the last few years many studies have been carried out finding new ways to extract useful semantic data exploiting the great amount of information contained in Wikipedia. Information organizational patterns like infoboxes, internal and external links, redirect and disambiguation pages have been analyzed in order to extract valuable data. The DBPedia Project [ <Node id="15189"/>16<Node id="15191"/> ], for instance, is a relevant attempt to extract semantic data from Wikipedia, making them available over the Web complying with Semantic Web standards [ <Node id="15347"/>6<Node id="15348"/> ]. DBPedia is a global knowledge base derived from Wikipedia, not specifically intended for Web resources description as Tagpedia is. In [ <Node id="15488"/>24<Node id="15490"/> ] there is a description of KLYN, a system that autonomously semantifies Wikipedia, automatically suggesting data inconsistencies, lacks or incompletenesses. Wikipedia has been also successfully exploited to compute semantic relatedness between words [ <Node id="15744"/>21<Node id="15746"/> ] and natural language texts [ <Node id="15778"/>9<Node id="15779"/> ], but also to tune new named entities disambiguation methodologies [ <Node id="15850"/>7<Node id="15851"/> ] [ <Node id="15856"/>8<Node id="15857"/> ]. Semantic relationships between Wikipedia categories have been studied in order to make the search of information easier and to give articles editors relevant suggestions [ <Node id="16033"/>20<Node id="16035"/> ]. Moreover some research has been done to understand and measure the way Wikipedia articles are created and their contents become mature [ <Node id="16176"/>22<Node id="16178"/> ] or to analyze statistical information about the growth of the data that constitute Wikipedia, the types of articles, the editors, the link and category structure and so on [ <Node id="16355"/>23<Node id="16357"/> ].<Node id="16360"/>
+        <Node id="16369"/>
+          <Node id="16380"/>3.1 The structure of Tagpedia<Node id="16409"/>
+          <Node id="16420"/>The main aim of Tagpedia is the semantic characterization of data over the Web. In particular it must allow to describe a Web resource through the association with one or more univocally referenced concepts. Thus, the main constitutional unit of TagPedia is the concept. Each concept must be unequivocally identified but also easily accessed. The main way to point out a concept is through the words that refer to it. Such words will also be called tags in the following. As a consequence, each concept is identified by the set of all the words or, more generally, all the alfanumeric expressions of any kind that can be adopted by a community of users to refer to it, thus constituting a<Node id="17108"/>
+          <Node id="17119"/>set of synonymous tags or syntag set. Syntag sets are the molecules which form Tagpedia.<Node id="17207"/>
+          <Node id="17218"/>
+            <Node id="17231"/>
+            <Node id="17244"/>Figure 3: Three syntag sets<Node id="17271"/>
+          <Node id="17282"/>
+          <Node id="17293"/>The creation of an initial rich collection of syntag sets is the first necessary step that must be carried out to build our semantic resource. Wikipedia shows many features exploitable to create such a collection of syntag sets. In particular, in Wikipedia an article usually defines a specific concept. As a consequence in order to bootstrap Tagpedia, we create syntag sets from the articles of Wikipedia. In <Node id="17703"/>Figure 3<Node id="17711"/> we show three examples of syntag sets made up by tags collected mining Wikipedia. To be more precise, Wikipedia pages can be substantially divided into three groups: • article pages: each describes a particular concept, identified by the title of the same page; • redirect pages: each links an alternate literal expression, that constitutes the title of the redirect page, to the corresponding concept, usually identified by the title of an article page; • disambiguation pages: each lists all the possible concepts, usually identified through the titles of article or redirect pages, that can be referred by the literal expression constituting the title of the disambiguation page. The redirect and the disambiguation page mechanisms are two important Wikipedia organizational solutions that can be exploited to build and enrich syntag sets. Once identified a concept referring to a particular article page, we create an initial version of a syntag set, pointed out by a unique identifier, including only the tag corresponding to the title of the page (in <Node id="18769"/>Figure 3<Node id="18777"/> , considering the syntag set 1, the tag ’jaguar’ is the title of an article page). Then we collect all the words and expressions that may be used to refer to that concept. As previuosly mentioned, in Wikipedia the redirect mechanism is used to link alternate literal expressions to the original encyclopedic article that describes a specific entity. It is<Node id="19133"/> usually used to manage synonyms, abbreviations, acronyms, misspellings, other spellings, different punctuations, particular capitalization rules and so on. In TagPedia we mine Wikipedia content and extract all the redirect information analyzing redirect pages; for each of them we enrich the syntag set related to the referred concept by adding the title of the page as a new tag (in <Node id="19518"/>Figure 3<Node id="19526"/> , considering the syntag set 1, the tag ’leo onca’ is extracted from a redirect page). Moreover, Wikipedia usually manages polysemy through the disambiguation pages. As said, each disambiguation page represents a collection of links to all the different article pages that identify the distinct meanings pointed out by the page title (textual string). For example, the word ’ajax ’ is highly polysemous and has 49 different meanings in Wikipedia: its disambiguation page contains links to 49 distinct article pages; each one identifies a particular concept. We analyze Wikipedia disambiguation pages as a futher source of information to enrich the syntag sets of Tagpedia through the addition of new words that refer to a defined meaning. In particular, for every disambiguation page, we point out each syntag set related to the concepts referenced inside its Wikipedia text and we add the title of the same disambiguation page as a new tag exploitable to access to the selected syntag sets (in <Node id="20522"/>Figure 3<Node id="20530"/> , considering the syntag set 1, the tag ’panther’ is extracted from a disambiguation page). Summarizing, let us define C i a concept derived from a specific Wikipedia article page P i . To populate with tags the syntag set for C i we extract: • the title of P i ; • the title of every redirect page to P i ; • the title of every disambiguation page containing a link to P i .<Node id="20906"/> Starting from a dump of the English version of Wikipedia, we have developed a set of C++ routines, that automatically analyze the text of Wikipedia articles. By mining structural<Node id="21085"/> elements of Wikipedia syntax as well as by considering texts punctuation and by exploiting pattern matching techniques mainly based on regular expressions and string analysis, our routines gather all the concepts as well as all the possible tags used to refer to each single meaning, thus defining a huge collection of syntag sets. The meaning of each concept, identified by a syntag set, is also better specified by pointing to the corresponding article in Wikipedia. All these data are collected in a relational database properly designed and optimized for a fast access. It is constituted by two basic collections: the concept table and the tag table. The first one gathers all the concepts of Tagpedia assigning to each of them a unique identifier, the Concept ID and a brief definition, extracted from the English version of Wikipedia. For every concept we also collect the URL of the corresponding Wikipedia article. On the other side, the tag table contains links between each concept, referenced through its identifier, and all the tags used to access to it. By mining September 2007 dump of the English version of Wikipedia, we have obtained more than 1,9 millions of syntag sets and more than 4 millions of tags used to point out the intended concepts, each one referencing a specific Wikipedia article (see <Node id="22404"/>Figure 4<Node id="22412"/> ). Considering <Node id="22428"/>Figure 5<Node id="22436"/> , we can visualize the weight of the different sources of the 4.230.740 tags of Tagpedia. The number of tags extracted from article pages (P ) is equal to the number of syntag sets, that is 1.927.378. Among the 2.303.362 remaining tags, 481.250 have been generated by mining disambiguation pages and 1.822.112 by analyzing redirect ones.<Node id="22774"/> This group of syntag sets constitutes the basis of Tagpedia providing a way to unequivocally access and refer to concepts when users must semantically describe or search for Web resources.<Node id="22963"/>
+          <Node id="22974"/>
+            <Node id="22987"/>
+            <Node id="23000"/>Figure 4: The structure of Tagpedia<Node id="23035"/>
+          <Node id="23046"/>
+          <Node id="23057"/>
+            <Node id="23070"/>
+            <Node id="23083"/>Figure 5: Sources of the tags in Tapgedia<Node id="23124"/>
+          <Node id="23135"/>
+          <Node id="23146"/>
+            <Node id="23159"/>
+              <Node id="23174"/>
+                <Node id="23191"/>
+                <Node id="23208"/>
+                  <Node id="23227"/>
+                    <Node id="23248"/>
+                    <Node id="23269"/> Number of del.icio.us URLs:<Node id="23297"/>
+                    <Node id="23318"/> 100<Node id="23322"/>
+                  <Node id="23341"/>
+                  <Node id="23360"/>
+                    <Node id="23381"/>
+                    <Node id="23402"/> Number of distinct tags:<Node id="23427"/>
+                    <Node id="23448"/> 1087<Node id="23453"/>
+                  <Node id="23472"/>
+                  <Node id="23491"/>
+                    <Node id="23512"/> Percentage of<Node id="23526"/>
+                    <Node id="23547"/> successfull disambiguations:<Node id="23576"/>
+                    <Node id="23597"/> 84 %<Node id="23602"/>
+                  <Node id="23621"/>
+                <Node id="23638"/>
+              <Node id="23653"/>
+            <Node id="23666"/>
+            <Node id="23679"/>Number of del.icio.us URLs: 100 Number of distinct tags: 1087 Percentage of successfull disambiguations: 84 %<Node id="23788"/>
+            <Node id="23801"/>Table 1: Tagpedia tag disambiguation support: preliminary evaluation results<Node id="23877"/>
+          <Node id="23888"/>
+        <Node id="23897"/>
+      <Node id="23904"/>
+      <Node id="23911"/>
+        <Node id="23920"/>4. EXPLOITING AND IMPROVING TAGPEDIA<Node id="23956"/>
+        <Node id="23965"/>In order to support the generation of semantic descriptions of Web resources or to semantically search for Web contents, the information contained in Tagpedia should be easily accessed, querying the whole collection of syntag sets. For this purpose we have developed the Tagpedia Web API that is a simple set of procedures that may be invoked via Web to exploit the semantic support offered by Tagpedia. These procedures carry out few fundamental tasks and may be composed to realize more complex functions; their execution can be easily requested by other external Web applications so as to integrate semantic features. The main tasks that Tagpedia Web API supports are:<Node id="24636"/>
+        <Node id="24645"/>• the definition of all the possible meanings for a given tag, i.e. all the syntag sets that contain the tag; • the collection of all the tags belonging to a specific syntag set, i.e. all the words or expressions exploitable to access that particular meaning; • the retrieval of the short textual description of a specific syntag set.<Node id="24979"/>
+        <Node id="24988"/>Exploiting Tagpedia Web API, we have integrated this semantic resource into SemKey, our semantic collaborative tagging system, substituting WordNet and Wikipedia so as to support the disambiguation of the meaning of tags. Once chosen one or more tags, the user specifies the right meaning for each of them, choosing a particular syntag set among those including the intended tag. An early prototypal Webbased interface useful to explore and interact with Tapgedia is accessible at the URL www.tagpedia.org. In order to evaluate the coverage of Tagpedia and also to obtain suggestions to improve this semantic resource, we have tried to manually point out the right meaning of the tags associated to the 100 most popular Web resources over del.icio.us, tagged by more than 25000 users. Relying upon Tagpedia Web API, we have developed a Web based procedure that, starting from the URL of a Web resource retrieves all the related tags in del.icio.us. All the possible meanings of each tag are retrieved from Tagpedia along with their short descriptions and the user manually verify if the right concept is present. In this way, collecting all the results of our user based tests, we have obtained a first evaluation of the disambiguation effectiveness of our semantic resource. The results are shown in <Node id="26289"/>Table 1<Node id="26296"/> . Tagpedia provides a valid support to the process of disambiguation for 84% of the total number of tags considered. Anyway we have identified several different ways to improve its contents and, as a consequence, its semantic coverage and its usefulness. In the following part of this section we will describe these proposals for future works. Despite its good disambiguation coverage, there are different particular tags like ’sem web’, ’inplaceedit’, ’web dev’<Node id="26759"/> and similar ones that are not managed by Tagpedia, because they are non conventional words, often created by a user to describe a particular concept and then accepted and exploited by many others. One possible solution to this problem is the introduction of collaborative Web editing techniques for Tagpedia contents. Giving users the possibility to create new syntag sets or to merge or extend existing ones through new tags is fundamental for such a kind of resource. Indeed the effectiveness of Tagpedia in the description of Web resources is proportional to the possibility to adapt and enrich this semantic resource in respect to the variability of user descriptive needs. In this context, the introduction of the possibility to collaboratively collect and manage data, following a Wiki-like paradigm, represents a key factor of current Web and is a crucial issue considering Tagpedia. Another aspect of Tagpedia that can be substantially improved is the enrichment of its semantic contents with the addition of semantic relations between syntag sets; they are useful to better identify concepts or to easily search for them. Each syntag set, representing a meaning, may be connected to other ones through relationships like specialization, generalization, relatedTo and similar ones. Possible ways to mine relevan relations between syntag sets are the analysis of the internal links between Wikipedia article pages as well as the exploitation of the hierarchy of Wikipedia categories. For instance, relying upon relations, when we specify the concept to search for or when we must choose a specific concept to semantically characterize a resource, the system can show the most general or the most specific ones to simplify this task. Similarly, during a semantic search, starting from a specific syntag set, if we can browse all the related ones, we can better specify our search needs and thus easily retrieve the desired information. A third way to improve and enrich Tagpedia is the definition of semi-automated procedures to extend its data, exploiting other resources and importing their contents into Tagpedia. Other relevant free Web thesauri or dictionaries or other language tools can be valid sources of information. For instance the Dictionary of Automotive Terms [ <Node id="29043"/>1<Node id="29044"/> ] or the Free Online Medical Dictionary [ <Node id="29087"/>2<Node id="29088"/> ] are two domain specific resources that can be integrated in Tagpedia. Moreover, mapping rules between Tagpedia syntag sets and other Web semantic resources can be defined to integrate different sources of information thanks to the common gronud represented by Tagpedia itself. Another aspect that must be further addressed in Tagpedia, is the support for multilinguism. In Tapgedia, each syntag set is language independent. The tags constituting that particular syntag set are specific to the particular language. Managing the possibility to collect different tags belonging to different languages into a syntag set, we can deal with different languages and once identified one or more particular concepts we can make language indipendent semantic searches. We think that this possibility should be better explored and defined, trying to determine specific semantic search patterns. As already mentioned in the concluding part of Section 2, the definition and tuning of automated or semiautomated procedures to create semantic descriptions is a further important issue to be faced. Users should be allowed to semantically describe Web resources in an easy way; they must be supported in the task of turning simple<Node id="30304"/> keywords into concepts or browsing the collection of syntag sets constituting Tagpedia without complicating their usual interaction patterns or compromising the usability of the systems they interact with. Moreover, automated methodologies to derive semantic descriptions of Web resources from simple keyword based ones can also be tuned, so as to create an initial solid collection of semantic metadata and bootstrap this new way to characterize resources over the Web.<Node id="30775"/>
+      <Node id="30782"/>
+      <Node id="30789"/>
+        <Node id="30798"/>5. CONCLUSIONS<Node id="30812"/>
+        <Node id="30821"/>In this paper we have presented Tagpedia, a collection of tags semantically structured, built ad hoc to describe Web contents. Starting from a brief analysis of the weak points of keyword based methodologies for information organization and searching and considering also the current approaches to face these issues, we have introduced the possibility to semantically describe Web resources through concepts. To make it possible, we have developed an initial version of Tagpedia a general domain semantic resource of reference, created by mining Wikipedia. After a description of its structure and organization and an overview of the Tagpedia Web API, useful to easily access and exploit the information collected in Tagpedia, we have focused our attention on the possible improvements to this semantic resource. Collaborative wiki authoring, syntag set relations enrichment, automated procedures for content extraction from external sources, support for multilinguism and automated generation of semantic descriptions of Web resources are some of the many improvements considered that can be carried out, underlining its broad enhancement possibilities. On the base of all these considerations, we believe that Tagpedia, despite its initial stage of development, represents an important attempt to support the introduction of semantics over the Web, trying to put in practice the principles of the Semantic Web on a global scale and to better structure and manage the huge amount of data constituting the actual Web.<Node id="32338"/>
+      <Node id="32345"/>
+      <Node id="32352"/>
+        <Node id="32361"/>6. REFERENCES<Node id="32374"/>
+        <Node id="32383"/>
+          <Node id="32394"/>[1] Dictionary of automotive terms. <Node id="32430"/>http://www.motorera.com/dictionary/.<Node id="32466"/>
+          <Node id="32477"/>[2] Free online medical dictionary. <Node id="32513"/>http://cancerweb.ncl.ac.uk/omd/.<Node id="32545"/>
+          <Node id="32556"/>[3] Alessio Malizia Alan Dix, Stefano Levialdi. Semantic halo for collaboration tagging systems. In the Social Navigation and Community-Based Adaptation Technologies Workshop June 20th, 2006, Dublin, Ireland.<Node id="32764"/>
+          <Node id="32775"/>[4] Francesco Ronzano Marco Rosella Salvatore Minutoli Andrea Marchetti, Maurizio Tesconi. Semkey: A semantic collaborative tagging system. In the Tagging and Metadata for Social Information Organization Workshop at the World Wide Web Conference 2007 May 8, 2007, Banff, Alberta, Canada.<Node id="33062"/>
+          <Node id="33073"/>[5] Christoph Schmitz Gerd Stumme Andreas Hotho, Robert J ́ laschke. Folkrank: A ranking algorithm for folksonomies <Node id="33189"/>http://www.kde.cs.uni-kassel.de<Node id="33220"/> . In the Lernen Wissensentdeckung Adaptivität Workshop October 9-11, 2006, Hildesheim, Germany.<Node id="33316"/>
+          <Node id="33327"/>[6] Soren Auer and Jens Lehmann. What have innsbruck and leipzig in common? extracting semantics from <Node id="33429"/> wiki content. In the 4th European Semantic Web Conference June 5th, 2007, Innsbruck, Austria.<Node id="33523"/>
+          <Node id="33534"/>[7] Razvan Bunescu and Marius Pasca. Using encyclopedic knowledge for named entity disambiguation. In the Proceedings of the 11th Conference of the European Chapter of the Association for Computational Linguistics April 9-16, 2006, Trento, Italy.<Node id="33780"/>
+          <Node id="33791"/>[8] Silviu Cucerzan. Large-scale named entity disambiguation based on wikipedia data. In the Empirical Methods in Natural Language Processing Conference June 28-30, 2007, Prague, Czech Republic.<Node id="33985"/>
+          <Node id="33996"/>[9] Evgeniy Gabrilovich and Shaul Markovitch. Computing semantic relatedness using wikipedia-based explicit semantic analysis. In the Proceedings of the 20th International Joint Conference on Artificial Intelligence January 6-12, 2007, Hyderabad, India.<Node id="34249"/>
+          <Node id="34260"/>[10] Scott A. Golder and Bernardo A. Huberman. The structure of collaborative tagging systems. In the Journal of Information Sciences, vol. 32, April, pag. 198-208, 2006.<Node id="34430"/>
+          <Node id="34441"/>[11] Andrew Gregorowicz and Mark A. Kramer. Mining a large-scale term-concept network from wikipedia. Mitre Technical Report, October 2006.<Node id="34580"/>
+          <Node id="34591"/>[12] Marieke Guy and Emma Tonkin. Tidying up tags? D-Lib Magazine, 12, January 2006.<Node id="34675"/>
+          <Node id="34686"/>[13] Hugh C. Davis Hend S. Al-Khalifa and Lester Gilbert. Creating structure from disorder: using folksonomies to create semantic metadata. In 3rd International Conference on Web Information Systems and Technologies 3-6 March, 2007, Barcelona, Spain.<Node id="34936"/>
+          <Node id="34947"/>[14] <Node id="34952"/>http://en.wikipedia.org/wiki/.<Node id="34982"/> The english version of wikipedia.<Node id="35016"/>
+          <Node id="35027"/>[15] <Node id="35032"/>http://vivisimo.com/.<Node id="35053"/> Vivisimo, search done right! [16] <Node id="35088"/>http://wiki.dbpedia.org<Node id="35111"/> . Dbpedia. [17] <Node id="35128"/>http://wordnet.princeton.edu/.<Node id="35158"/> Princeton wordnet.<Node id="35177"/>
+          <Node id="35188"/>[18] <Node id="35193"/>http://www.grokker.com/.<Node id="35217"/> Grokker enterprise search management.<Node id="35255"/>
+          <Node id="35266"/>[19] <Node id="35271"/>http://www.kartoo.com/.<Node id="35294"/> Kartoo meta-search engine.<Node id="35321"/>
+          <Node id="35332"/>[20] Wolfgang Nejdl Sergey Chernov, Tereza Iofciu and Xuan Zhou. Extracting semantic relationships between wikipedia categories. In the 1st Workshop on Semantic Wikis at the 3rd European Semantic Web Conference June 11-14, 2006, Budva, Montenegro.<Node id="35579"/>
+          <Node id="35590"/>[21] Michael Strube and Simone Paolo Ponzetto. Wikirelate! computing semantic relatedness using wikipedia. In the Proceedings of the 45th Annual Southeast Regional Conference, pag. 106 110 March 23-24, 2007, Winston-Salem, North Carolina, USA.<Node id="35833"/>
+          <Node id="35844"/>[22] Cristopher Thomas and Amit P.Sheth. Semantic convergence of wikipedia articles. In the Proceedings of Web Intelligence Conference, pag. 600-606 Silicon Valley, November 2-5, 2007.<Node id="36028"/>
+          <Node id="36039"/>[23] Jakob VoSS. Measuring wikipedia. In the Proceedings of the 10 th International Conference of the International Society for Scientometrics and Informetrics July 24-28, Stockholm, Sweden.<Node id="36229"/>
+          <Node id="36240"/>[24] Fei Wu and Daniel S. Weld. Autonomously semantifying wikipedia. In the Proceedings of the 16th ACM conference on Conference on information and <Node id="36388"/> knowledge management, pag. 41-50 November 6-9, 2007, Lisboa, Portugal.<Node id="36459"/>
+          <Node id="36470"/>[25] Jianchang Mao Zhichen Xu, Yun Fu and Difu Su. Towards the semantic web: Collaborative tag suggestions. In the Proceedings of the Collaborative Web Tagging Workshop at the World Wide Web Conference 2006 May 23-26, 2006, Edinburgh, Scotland.<Node id="36714"/>
+        <Node id="36723"/>
+      <Node id="36730"/>
+    <Node id="36735"/>
+  <Node id="36738"/>
+<Node id="36739"/></TextWithNodes>
+<!-- The default annotation set -->
+
+<AnnotationSet>
+</AnnotationSet>
+
+<!-- Named annotation set -->
+
+<AnnotationSet Name="Original markups">
+<Annotation Id="0" Type="pdfx" StartNode="0" EndNode="36739">
+<Feature>
+  <Name className="java.lang.String">xsi:noNamespaceSchemaLocation</Name>
+  <Value className="java.lang.String">http://pdfx.cs.man.ac.uk/static/article-schema.xsd</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">xmlns:xsi</Name>
+  <Value className="java.lang.String">http://www.w3.org/2001/XMLSchema-instance</Value>
+</Feature>
+</Annotation>
+<Annotation Id="1" Type="meta" StartNode="3" EndNode="172">
+</Annotation>
+<Annotation Id="2" Type="job" StartNode="8" EndNode="72">
+</Annotation>
+<Annotation Id="3" Type="base_name" StartNode="77" EndNode="80">
+</Annotation>
+<Annotation Id="4" Type="doi" StartNode="85" EndNode="126">
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">alt_doi</Name>
+  <Value className="java.lang.String">http://dx.doi.org/10.1145/1479190.1479194</Value>
+</Feature>
+</Annotation>
+<Annotation Id="5" Type="warning" StartNode="131" EndNode="169">
+</Annotation>
+<Annotation Id="6" Type="article" StartNode="175" EndNode="36738">
+</Annotation>
+<Annotation Id="7" Type="front" StartNode="180" EndNode="2940">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:FrontMatter</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8" Type="title-group" StartNode="187" EndNode="274">
+</Annotation>
+<Annotation Id="9" Type="article-title" StartNode="196" EndNode="267">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Title</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="10" Type="region" StartNode="281" EndNode="524">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">unknown</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+</Annotation>
+<Annotation Id="11" Type="email" StartNode="472" EndNode="500">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="12" Type="email" StartNode="501" EndNode="524">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="13" Type="abstract" StartNode="531" EndNode="2274">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Abstract</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+</Annotation>
+<Annotation Id="14" Type="section" StartNode="2281" EndNode="2331">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Section</Value>
+</Feature>
+</Annotation>
+<Annotation Id="15" Type="h2" StartNode="2290" EndNode="2324">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:SectionTitle</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+</Annotation>
+<Annotation Id="16" Type="region" StartNode="2338" EndNode="2418">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+</Annotation>
+<Annotation Id="17" Type="section" StartNode="2425" EndNode="2454">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Section</Value>
+</Feature>
+</Annotation>
+<Annotation Id="18" Type="h2" StartNode="2434" EndNode="2447">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:SectionTitle</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+</Annotation>
+<Annotation Id="19" Type="region" StartNode="2461" EndNode="2516">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+</Annotation>
+<Annotation Id="20" Type="section" StartNode="2523" EndNode="2547">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Section</Value>
+</Feature>
+</Annotation>
+<Annotation Id="21" Type="h2" StartNode="2532" EndNode="2540">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:SectionTitle</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+</Annotation>
+<Annotation Id="22" Type="region" StartNode="2554" EndNode="2806">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+</Annotation>
+<Annotation Id="23" Type="region" StartNode="2813" EndNode="2935">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">unknown</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+</Annotation>
+<Annotation Id="24" Type="email" StartNode="2908" EndNode="2935">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+</Annotation>
+<Annotation Id="25" Type="body" StartNode="2945" EndNode="36735">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:BodyMatter</Value>
+</Feature>
+</Annotation>
+<Annotation Id="26" Type="section" StartNode="2952" EndNode="3007">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Section</Value>
+</Feature>
+</Annotation>
+<Annotation Id="27" Type="h1" StartNode="2961" EndNode="3000">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:SectionTitle</Value>
+</Feature>
+</Annotation>
+<Annotation Id="28" Type="region" StartNode="3014" EndNode="8166">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">31</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+</Annotation>
+<Annotation Id="29" Type="xref" StartNode="3406" EndNode="3414">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">15</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">F1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">fig</Value>
+</Feature>
+</Annotation>
+<Annotation Id="30" Type="xref" StartNode="3786" EndNode="3794">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">16</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">F1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">fig</Value>
+</Feature>
+</Annotation>
+<Annotation Id="31" Type="xref" StartNode="4569" EndNode="4577">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">17</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">F1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">fig</Value>
+</Feature>
+</Annotation>
+<Annotation Id="32" Type="marker" StartNode="5575" EndNode="5575">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">page</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="33" Type="marker" StartNode="5575" EndNode="5575">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">column</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="34" Type="marker" StartNode="5575" EndNode="5575">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="35" Type="xref" StartNode="6246" EndNode="6247">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">22</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="36" Type="xref" StartNode="6252" EndNode="6254">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">23</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="37" Type="xref" StartNode="6259" EndNode="6261">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">24</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="38" Type="xref" StartNode="6266" EndNode="6268">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">25</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R25</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="39" Type="xref" StartNode="6537" EndNode="6539">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">26</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R15</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="40" Type="xref" StartNode="6553" EndNode="6555">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">27</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R18</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="41" Type="xref" StartNode="6571" EndNode="6573">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">28</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R19</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="42" Type="xref" StartNode="7201" EndNode="7202">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">29</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="43" Type="marker" StartNode="7588" EndNode="7588">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">column</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="44" Type="marker" StartNode="7588" EndNode="7588">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="45" Type="outsider" StartNode="8173" EndNode="8174">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">19</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">footer</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextBox</Value>
+</Feature>
+</Annotation>
+<Annotation Id="46" Type="region" StartNode="8181" EndNode="8259">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:FigureBox</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">F1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="47" Type="image" StartNode="8190" EndNode="8190">
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Figure</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">src</Name>
+  <Value className="java.lang.String">i6d.page_002.image_01.png</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">thmb</Name>
+  <Value className="java.lang.String">i6d.page_002.image_01-thumb.png</Value>
+</Feature>
+</Annotation>
+<Annotation Id="48" Type="caption" StartNode="8199" EndNode="8252">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">21</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Caption</Value>
+</Feature>
+</Annotation>
+<Annotation Id="49" Type="section" StartNode="8266" EndNode="13703">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Section</Value>
+</Feature>
+</Annotation>
+<Annotation Id="50" Type="h1" StartNode="8275" EndNode="8330">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">32</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:SectionTitle</Value>
+</Feature>
+</Annotation>
+<Annotation Id="51" Type="region" StartNode="8339" EndNode="9244">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">34</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+</Annotation>
+<Annotation Id="52" Type="xref" StartNode="8928" EndNode="8936">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">33</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">F2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">fig</Value>
+</Feature>
+</Annotation>
+<Annotation Id="53" Type="region" StartNode="9253" EndNode="9293">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:FigureBox</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">F2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="54" Type="image" StartNode="9264" EndNode="9264">
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Figure</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">src</Name>
+  <Value className="java.lang.String">i6d.page_002.image_02.png</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">thmb</Name>
+  <Value className="java.lang.String">i6d.page_002.image_02-thumb.png</Value>
+</Feature>
+</Annotation>
+<Annotation Id="55" Type="caption" StartNode="9275" EndNode="9284">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">36</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Caption</Value>
+</Feature>
+</Annotation>
+<Annotation Id="56" Type="region" StartNode="9302" EndNode="9352">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">37</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+</Annotation>
+<Annotation Id="57" Type="region" StartNode="9361" EndNode="13696">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">47</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+</Annotation>
+<Annotation Id="58" Type="xref" StartNode="9641" EndNode="9643">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">38</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="59" Type="xref" StartNode="10153" EndNode="10154">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">39</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="60" Type="marker" StartNode="10297" EndNode="10297">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">page</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="61" Type="marker" StartNode="10297" EndNode="10297">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">column</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="62" Type="marker" StartNode="10297" EndNode="10297">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="63" Type="marker" StartNode="10817" EndNode="10817">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="64" Type="xref" StartNode="10949" EndNode="10950">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">42</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="65" Type="xref" StartNode="11250" EndNode="11252">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">43</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="66" Type="xref" StartNode="11269" EndNode="11271">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">44</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R17</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="67" Type="xref" StartNode="12665" EndNode="12666">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">45</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="68" Type="xref" StartNode="12675" EndNode="12676">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">46</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="69" Type="section" StartNode="13710" EndNode="23904">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Section</Value>
+</Feature>
+</Annotation>
+<Annotation Id="70" Type="h1" StartNode="13719" EndNode="13779">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">48</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:SectionTitle</Value>
+</Feature>
+</Annotation>
+<Annotation Id="71" Type="region" StartNode="13788" EndNode="16360">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">60</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+</Annotation>
+<Annotation Id="72" Type="xref" StartNode="14242" EndNode="14244">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">49</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="73" Type="xref" StartNode="15189" EndNode="15191">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">50</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R16</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="74" Type="xref" StartNode="15347" EndNode="15348">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">51</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="75" Type="xref" StartNode="15488" EndNode="15490">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">52</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R24</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="76" Type="xref" StartNode="15744" EndNode="15746">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">53</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R21</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="77" Type="xref" StartNode="15778" EndNode="15779">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">54</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="78" Type="xref" StartNode="15850" EndNode="15851">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">55</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="79" Type="xref" StartNode="15856" EndNode="15857">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">56</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="80" Type="xref" StartNode="16033" EndNode="16035">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">57</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R20</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="81" Type="xref" StartNode="16176" EndNode="16178">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">58</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R22</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="82" Type="xref" StartNode="16355" EndNode="16357">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">59</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R23</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="83" Type="section" StartNode="16369" EndNode="23897">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Section</Value>
+</Feature>
+</Annotation>
+<Annotation Id="84" Type="h2" StartNode="16380" EndNode="16409">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">61</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:SectionTitle</Value>
+</Feature>
+</Annotation>
+<Annotation Id="85" Type="region" StartNode="16420" EndNode="17108">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">62</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+</Annotation>
+<Annotation Id="86" Type="region" StartNode="17119" EndNode="17207">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">63</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+</Annotation>
+<Annotation Id="87" Type="region" StartNode="17218" EndNode="17282">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:FigureBox</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">F3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="88" Type="image" StartNode="17231" EndNode="17231">
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Figure</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">src</Name>
+  <Value className="java.lang.String">i6d.page_004.image_03.png</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">thmb</Name>
+  <Value className="java.lang.String">i6d.page_004.image_03-thumb.png</Value>
+</Feature>
+</Annotation>
+<Annotation Id="89" Type="caption" StartNode="17244" EndNode="17271">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">65</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Caption</Value>
+</Feature>
+</Annotation>
+<Annotation Id="90" Type="region" StartNode="17293" EndNode="22963">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">80</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+</Annotation>
+<Annotation Id="91" Type="xref" StartNode="17703" EndNode="17711">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">66</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">F3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">fig</Value>
+</Feature>
+</Annotation>
+<Annotation Id="92" Type="xref" StartNode="18769" EndNode="18777">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">67</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">F3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">fig</Value>
+</Feature>
+</Annotation>
+<Annotation Id="93" Type="marker" StartNode="19133" EndNode="19133">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">column</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="94" Type="marker" StartNode="19133" EndNode="19133">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="95" Type="xref" StartNode="19518" EndNode="19526">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">69</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">F3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">fig</Value>
+</Feature>
+</Annotation>
+<Annotation Id="96" Type="xref" StartNode="20522" EndNode="20530">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">70</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">F3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">fig</Value>
+</Feature>
+</Annotation>
+<Annotation Id="97" Type="marker" StartNode="20906" EndNode="20906">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="98" Type="marker" StartNode="21085" EndNode="21085">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">page</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+</Annotation>
+<Annotation Id="99" Type="marker" StartNode="21085" EndNode="21085">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">column</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="100" Type="marker" StartNode="21085" EndNode="21085">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="101" Type="xref" StartNode="22404" EndNode="22412">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">75</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">F4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">fig</Value>
+</Feature>
+</Annotation>
+<Annotation Id="102" Type="xref" StartNode="22428" EndNode="22436">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">76</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">F5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">fig</Value>
+</Feature>
+</Annotation>
+<Annotation Id="103" Type="marker" StartNode="22774" EndNode="22774">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="104" Type="region" StartNode="22974" EndNode="23046">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:FigureBox</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">F4</Value>
+</Feature>
+</Annotation>
+<Annotation Id="105" Type="image" StartNode="22987" EndNode="22987">
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Figure</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">src</Name>
+  <Value className="java.lang.String">i6d.page_004.image_04.png</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">thmb</Name>
+  <Value className="java.lang.String">i6d.page_004.image_04-thumb.png</Value>
+</Feature>
+</Annotation>
+<Annotation Id="106" Type="caption" StartNode="23000" EndNode="23035">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">73</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Caption</Value>
+</Feature>
+</Annotation>
+<Annotation Id="107" Type="region" StartNode="23057" EndNode="23135">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:FigureBox</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">F5</Value>
+</Feature>
+</Annotation>
+<Annotation Id="108" Type="image" StartNode="23070" EndNode="23070">
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Figure</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">src</Name>
+  <Value className="java.lang.String">i6d.page_005.image_05.png</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">thmb</Name>
+  <Value className="java.lang.String">i6d.page_005.image_05-thumb.png</Value>
+</Feature>
+</Annotation>
+<Annotation Id="109" Type="caption" StartNode="23083" EndNode="23124">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">79</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Caption</Value>
+</Feature>
+</Annotation>
+<Annotation Id="110" Type="region" StartNode="23146" EndNode="23888">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TableBox</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">Tx81</Value>
+</Feature>
+</Annotation>
+<Annotation Id="111" Type="content" StartNode="23159" EndNode="23666">
+</Annotation>
+<Annotation Id="112" Type="table" StartNode="23174" EndNode="23653">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Table</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+</Annotation>
+<Annotation Id="113" Type="thead" StartNode="23191" EndNode="23191">
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="114" Type="tbody" StartNode="23208" EndNode="23638">
+</Annotation>
+<Annotation Id="115" Type="tr" StartNode="23227" EndNode="23341">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="116" Type="td" StartNode="23248" EndNode="23248">
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="117" Type="td" StartNode="23269" EndNode="23297">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="118" Type="td" StartNode="23318" EndNode="23322">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="119" Type="tr" StartNode="23360" EndNode="23472">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="120" Type="td" StartNode="23381" EndNode="23381">
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="121" Type="td" StartNode="23402" EndNode="23427">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="122" Type="td" StartNode="23448" EndNode="23453">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="123" Type="tr" StartNode="23491" EndNode="23621">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="124" Type="td" StartNode="23512" EndNode="23526">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="125" Type="td" StartNode="23547" EndNode="23576">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="126" Type="td" StartNode="23597" EndNode="23602">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="127" Type="region" StartNode="23679" EndNode="23788">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">82</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">TableInfo</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+</Annotation>
+<Annotation Id="128" Type="caption" StartNode="23801" EndNode="23877">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">83</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Caption</Value>
+</Feature>
+</Annotation>
+<Annotation Id="129" Type="section" StartNode="23911" EndNode="30782">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Section</Value>
+</Feature>
+</Annotation>
+<Annotation Id="130" Type="h1" StartNode="23920" EndNode="23956">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">84</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:SectionTitle</Value>
+</Feature>
+</Annotation>
+<Annotation Id="131" Type="region" StartNode="23965" EndNode="24636">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">85</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+</Annotation>
+<Annotation Id="132" Type="region" StartNode="24645" EndNode="24979">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">86</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">confidence</Name>
+  <Value className="java.lang.String">possible</Value>
+</Feature>
+</Annotation>
+<Annotation Id="133" Type="region" StartNode="24988" EndNode="30775">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">92</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+</Annotation>
+<Annotation Id="134" Type="xref" StartNode="26289" EndNode="26296">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">87</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">T1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">table</Value>
+</Feature>
+</Annotation>
+<Annotation Id="135" Type="marker" StartNode="26759" EndNode="26759">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">page</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+</Annotation>
+<Annotation Id="136" Type="marker" StartNode="26759" EndNode="26759">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">column</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="137" Type="marker" StartNode="26759" EndNode="26759">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="138" Type="xref" StartNode="29043" EndNode="29044">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">89</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="139" Type="xref" StartNode="29087" EndNode="29088">
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">90</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Reference</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ref-type</Name>
+  <Value className="java.lang.String">bibr</Value>
+</Feature>
+</Annotation>
+<Annotation Id="140" Type="marker" StartNode="30304" EndNode="30304">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">column</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="141" Type="marker" StartNode="30304" EndNode="30304">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="142" Type="section" StartNode="30789" EndNode="32345">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:Conclusion</Value>
+</Feature>
+</Annotation>
+<Annotation Id="143" Type="h1" StartNode="30798" EndNode="30812">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">93</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:SectionTitle</Value>
+</Feature>
+</Annotation>
+<Annotation Id="144" Type="region" StartNode="30821" EndNode="32338">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">94</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:TextChunk</Value>
+</Feature>
+</Annotation>
+<Annotation Id="145" Type="section" StartNode="32352" EndNode="36730">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:Bibliography</Value>
+</Feature>
+</Annotation>
+<Annotation Id="146" Type="h1" StartNode="32361" EndNode="32374">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">95</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:SectionTitle</Value>
+</Feature>
+</Annotation>
+<Annotation Id="147" Type="ref-list" StartNode="32383" EndNode="36723">
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">DoCO:BiblioGraphicReferenceList</Value>
+</Feature>
+</Annotation>
+<Annotation Id="148" Type="ref" StartNode="32394" EndNode="32466">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">97</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="149" Type="ext-link" StartNode="32430" EndNode="32466">
+<Feature>
+  <Name className="java.lang.String">ext-link-type</Name>
+  <Value className="java.lang.String">uri</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">href</Name>
+  <Value className="java.lang.String">http://www.motorera.com/dictionary/.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">96</Value>
+</Feature>
+</Annotation>
+<Annotation Id="150" Type="ref" StartNode="32477" EndNode="32545">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">99</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="151" Type="ext-link" StartNode="32513" EndNode="32545">
+<Feature>
+  <Name className="java.lang.String">ext-link-type</Name>
+  <Value className="java.lang.String">uri</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">href</Name>
+  <Value className="java.lang.String">http://cancerweb.ncl.ac.uk/omd/.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">98</Value>
+</Feature>
+</Annotation>
+<Annotation Id="152" Type="ref" StartNode="32556" EndNode="32764">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">100</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="153" Type="ref" StartNode="32775" EndNode="33062">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">101</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="154" Type="ref" StartNode="33073" EndNode="33316">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">103</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="155" Type="ext-link" StartNode="33189" EndNode="33220">
+<Feature>
+  <Name className="java.lang.String">ext-link-type</Name>
+  <Value className="java.lang.String">uri</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">href</Name>
+  <Value className="java.lang.String">http://www.kde.cs.uni-kassel.de</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">102</Value>
+</Feature>
+</Annotation>
+<Annotation Id="156" Type="ref" StartNode="33327" EndNode="33523">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">105</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="157" Type="marker" StartNode="33429" EndNode="33429">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">page</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+</Annotation>
+<Annotation Id="158" Type="marker" StartNode="33429" EndNode="33429">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">column</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="159" Type="marker" StartNode="33429" EndNode="33429">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="160" Type="ref" StartNode="33534" EndNode="33780">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">106</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="161" Type="ref" StartNode="33791" EndNode="33985">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">107</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="162" Type="ref" StartNode="33996" EndNode="34249">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">108</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="163" Type="ref" StartNode="34260" EndNode="34430">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">109</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="164" Type="ref" StartNode="34441" EndNode="34580">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">110</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="165" Type="ref" StartNode="34591" EndNode="34675">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">111</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="166" Type="ref" StartNode="34686" EndNode="34936">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">112</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="167" Type="ref" StartNode="34947" EndNode="35016">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">114</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="168" Type="ext-link" StartNode="34952" EndNode="34982">
+<Feature>
+  <Name className="java.lang.String">ext-link-type</Name>
+  <Value className="java.lang.String">uri</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">href</Name>
+  <Value className="java.lang.String">http://en.wikipedia.org/wiki/.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">113</Value>
+</Feature>
+</Annotation>
+<Annotation Id="169" Type="ref" StartNode="35027" EndNode="35177">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">118</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R15</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="170" Type="ext-link" StartNode="35032" EndNode="35053">
+<Feature>
+  <Name className="java.lang.String">ext-link-type</Name>
+  <Value className="java.lang.String">uri</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">href</Name>
+  <Value className="java.lang.String">http://vivisimo.com/.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">115</Value>
+</Feature>
+</Annotation>
+<Annotation Id="171" Type="ext-link" StartNode="35088" EndNode="35111">
+<Feature>
+  <Name className="java.lang.String">ext-link-type</Name>
+  <Value className="java.lang.String">uri</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">href</Name>
+  <Value className="java.lang.String">http://wiki.dbpedia.org</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">116</Value>
+</Feature>
+</Annotation>
+<Annotation Id="172" Type="ext-link" StartNode="35128" EndNode="35158">
+<Feature>
+  <Name className="java.lang.String">ext-link-type</Name>
+  <Value className="java.lang.String">uri</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">href</Name>
+  <Value className="java.lang.String">http://wordnet.princeton.edu/.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">117</Value>
+</Feature>
+</Annotation>
+<Annotation Id="173" Type="ref" StartNode="35188" EndNode="35255">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">120</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R16</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="174" Type="ext-link" StartNode="35193" EndNode="35217">
+<Feature>
+  <Name className="java.lang.String">ext-link-type</Name>
+  <Value className="java.lang.String">uri</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">href</Name>
+  <Value className="java.lang.String">http://www.grokker.com/.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">119</Value>
+</Feature>
+</Annotation>
+<Annotation Id="175" Type="ref" StartNode="35266" EndNode="35321">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">122</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R17</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="176" Type="ext-link" StartNode="35271" EndNode="35294">
+<Feature>
+  <Name className="java.lang.String">ext-link-type</Name>
+  <Value className="java.lang.String">uri</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">href</Name>
+  <Value className="java.lang.String">http://www.kartoo.com/.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">121</Value>
+</Feature>
+</Annotation>
+<Annotation Id="177" Type="ref" StartNode="35332" EndNode="35579">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">123</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R18</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="178" Type="ref" StartNode="35590" EndNode="35833">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">124</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R19</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="179" Type="ref" StartNode="35844" EndNode="36028">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">125</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R20</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="180" Type="ref" StartNode="36039" EndNode="36229">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">126</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R21</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="181" Type="ref" StartNode="36240" EndNode="36459">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">128</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R22</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+<Annotation Id="182" Type="marker" StartNode="36388" EndNode="36388">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">column</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="183" Type="marker" StartNode="36388" EndNode="36388">
+<Feature>
+  <Name className="java.lang.String">type</Name>
+  <Value className="java.lang.String">block</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">isEmptyAndSpan</Name>
+  <Value className="java.lang.String">true</Value>
+</Feature>
+</Annotation>
+<Annotation Id="184" Type="ref" StartNode="36470" EndNode="36714">
+<Feature>
+  <Name className="java.lang.String">column</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">129</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">page</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">rid</Name>
+  <Value className="java.lang.String">R23</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">class</Name>
+  <Value className="java.lang.String">deo:BibliographicReference</Value>
+</Feature>
+</Annotation>
+</AnnotationSet>
+
+</GateDocument>

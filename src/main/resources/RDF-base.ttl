@@ -1,0 +1,74 @@
+# baseURI: http://drinventor.eu/
+# imports: http://dbpedia.org/ontology/
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/spar/pro/
+# imports: http://swrc.ontoware.org/ontology#
+# imports: http://xmlns.com/foaf/0.1/
+
+# ORIGINAL IMPORTS:
+# owl:imports <http://xmlns.com/foaf/0.1/> , <http://purl.org/dc/elements/1.1/> , pro: , <http://ontoware.org/swrc/swrc/SWRCOWL/swrc_updated_v0.7.1.owl> , dbp:, biro:, fabio: , <http://purl.org/vocab/frbr/core>, <http://purl.org/co>;
+
+
+@prefix : <http://drinventor.eu/> .
+@prefix drionto: <http://drinventor.eu/onto/> .
+@prefix dribase: <http://drinventor.eu/sem/> .
+@prefix dripub: <http://drinventor.eu/sem/dripaper/> .
+@prefix driperson: <http://drinventor.eu/sem/person/> .
+@prefix driaffiliation: <http://drinventor.eu/sem/affiliation/> .
+@prefix drirole: <http://drinventor.eu/sem/role/> .
+@prefix drisent: <http://drinventor.eu/sem/structure/sent/> .
+@prefix drisect: <http://drinventor.eu/sem/structure/sect/> .
+@prefix dricit: <http://drinventor.eu/sem/structure/cits/> .
+
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix pro:     <http://purl.org/spar/pro/> .
+@prefix biro: <http://purl.org/spar/biro/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix c4o: <http://purl.org/spar/biro/> .
+@prefix deo: <http://purl.org/spar/deo/> .
+@prefix doco: <http://purl.org/spar/doco/> .
+
+@prefix swrc:    <http://swrc.ontoware.org/ontology#> .
+
+@prefix po: <http://www.essepuntato.it/2008/12/pattern#> .
+@prefix co: <http://purl.org/co/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dc:	 <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+
+
+drionto: 
+      rdf:type owl:Ontology ;
+      owl:imports <http://purl.org/spar/deo/>, <http://backingdata.org/ESWC2015/ontology/pro_onto.owl> , <http://backingdata.org/ESWC2015/ontology/swrc_updated_v0.7.1.owl> , <http://backingdata.org/ESWC2015/ontology/biro_onto.owl>, <http://backingdata.org/ESWC2015/ontology/fabio_onto.owl>, <http://backingdata.org/ESWC2015/ontology/frbr_onto.rdf>, <http://backingdata.org/ESWC2015/ontology/co_onto.owl> .
+
+drionto:Approach rdf:type owl:Class ;
+      rdfs:subClassOf deo:DiscourseElement .
+
+drionto:Background rdf:type owl:Class ;
+      rdfs:subClassOf deo:DiscourseElement .
+
+drionto:Challenge rdf:type owl:Class ;
+      rdfs:subClassOf deo:DiscourseElement .
+
+drionto:FutureWork rdf:type owl:Class ;
+      rdfs:subClassOf deo:DiscourseElement .
+
+drionto:Outcome rdf:type owl:Class ;
+      rdfs:subClassOf deo:DiscourseElement .
+
+drionto:Unspecified rdf:type owl:Class ;
+      rdfs:subClassOf deo:DiscourseElement .
+
+drionto:Sense rdf:type owl:Class .
+
+drionto:linkScore rdf:type owl:DatatypeProperty ;
+      rdfs:domain drionto:Sense ;
+      rdfs:range xsd:double .
+

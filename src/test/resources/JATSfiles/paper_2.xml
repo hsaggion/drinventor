@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="3.0" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">PLoS ONE</journal-id>
+<journal-id journal-id-type="publisher-id">plos</journal-id>
+<journal-id journal-id-type="pmc">plosone</journal-id>
+<journal-title-group>
+<journal-title>PLOS ONE</journal-title>
+</journal-title-group>
+<issn pub-type="epub">1932-6203</issn>
+<publisher>
+<publisher-name>Public Library of Science</publisher-name>
+<publisher-loc>San Francisco, CA USA</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="doi">10.1371/journal.pone.0136492</article-id>
+<article-id pub-id-type="publisher-id">PONE-D-14-37557</article-id>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Research Article</subject>
+</subj-group>
+</article-categories>
+<title-group>
+<article-title>Infants Time Their Smiles to Make Their Moms Smile</article-title>
+<alt-title alt-title-type="running-head">Infants Time Their Smiles to Make Their Moms Smile</alt-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes" xlink:type="simple">
+<name name-style="western">
+<surname>Ruvolo</surname>
+<given-names>Paul</given-names>
+</name>
+<xref rid="aff001" ref-type="aff"><sup>1</sup></xref>
+<xref rid="cor001" ref-type="corresp">*</xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Messinger</surname>
+<given-names>Daniel</given-names>
+</name>
+<xref rid="aff002" ref-type="aff"><sup>2</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Movellan</surname>
+<given-names>Javier</given-names>
+</name>
+<xref rid="aff003" ref-type="aff"><sup>3</sup></xref>
+</contrib>
+</contrib-group>
+<aff id="aff001"><label>1</label> <addr-line>Olin College of Engineering, Department of Engineering, Needham, Massachusetts, United States of America</addr-line></aff>
+<aff id="aff002"><label>2</label> <addr-line>University of Miami, Department of Psychology, Coral Gables, Florida, United States of America</addr-line></aff>
+<aff id="aff003"><label>3</label> <addr-line>Institute for Neural Computation, University of California San Diego, La Jolla, California, United States of America</addr-line></aff>
+<contrib-group>
+<contrib contrib-type="editor" xlink:type="simple">
+<name name-style="western">
+<surname>Bard</surname>
+<given-names>Kim A.</given-names>
+</name>
+<role>Editor</role>
+<xref ref-type="aff" rid="edit1"/>
+</contrib>
+</contrib-group>
+<aff id="edit1"><addr-line>University of Portsmouth, UNITED KINGDOM</addr-line></aff>
+<author-notes>
+<fn fn-type="conflict" id="coi001">
+<p>The authors have declared that no competing interests exist.</p>
+</fn>
+<fn fn-type="con" id="contrib001">
+<p>Conceived and designed the experiments: PR DM JM. Performed the experiments: PR DM. Analyzed the data: PR DM JM. Contributed reagents/materials/analysis tools: PR JM. Wrote the paper: PR DM JM.</p>
+</fn>
+<corresp id="cor001">* E-mail: <email xlink:type="simple">Paul.Ruvolo@olin.edu</email></corresp>
+</author-notes>
+<pub-date pub-type="epub">
+<day>23</day>
+<month>9</month>
+<year>2015</year>
+</pub-date>
+<pub-date pub-type="collection">
+<year>2015</year>
+</pub-date>
+<volume>10</volume>
+<issue>9</issue>
+<elocation-id>e0136492</elocation-id>
+<history>
+<date date-type="received">
+<day>20</day>
+<month>8</month>
+<year>2014</year>
+</date>
+<date date-type="accepted">
+<day>4</day>
+<month>8</month>
+<year>2015</year>
+</date>
+</history>
+<permissions>
+<copyright-year>2015</copyright-year>
+<copyright-holder>Ruvolo et al</copyright-holder>
+<license xlink:href="http://creativecommons.org/licenses/by/4.0/" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="info:doi/10.1371/journal.pone.0136492" xlink:type="simple"/>
+<abstract>
+<p>One of the earliest forms of interaction between mothers and infants is smiling games. While the temporal dynamics of these games have been extensively studied, they are still not well understood. Why do mothers and infants time their smiles the way they do? To answer this question we applied methods from control theory, an approach frequently used in robotics, to analyze and synthesize goal-oriented behavior. The results of our analysis show that by the time infants reach 4 months of age both mothers and infants time their smiles in a purposeful, goal-oriented manner. In our study, mothers consistently attempted to maximize the time spent in mutual smiling, while infants tried to maximize mother-only smile time. To validate this finding, we ported the smile timing strategy used by infants to a sophisticated child-like robot that automatically perceived and produced smiles while interacting with adults. As predicted, this strategy proved successful at maximizing adult-only smile time. The results indicate that by 4 months of age infants interact with their mothers in a goal-oriented manner, utilizing a sophisticated understanding of timing in social interactions. Our work suggests that control theory is a promising technique for both analyzing complex interactive behavior and providing new insights into the development of social communication.</p>
+</abstract>
+<funding-group>
+<funding-statement>This research was supported by grants from the National Science Foundation (INT2—-0808767 &amp; BCS1052736) and the National Institutes of Health (GM105004 MH 48680).</funding-statement>
+</funding-group>
+<counts>
+<fig-count count="3"/>
+<table-count count="1"/>
+<page-count count="10"/>
+</counts>
+<custom-meta-group>
+<custom-meta id="data-availability" xlink:type="simple">
+<meta-name>Data Availability</meta-name>
+<meta-value>All data are within the paper and its Supporting Information files.</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+</front>
+<body>
+<sec id="sec001">
+<title>Introduction: Mother-Infant Interaction Study</title>
+<p>Interactive smile games between infants and their caregivers mark an important milestone in infant social development and serve as the foundation for later forms of social interaction [<xref rid="pone.0136492.ref001" ref-type="bibr">1</xref>, <xref rid="pone.0136492.ref002" ref-type="bibr">2</xref>]. Research on mother-infant smile interaction has used statistical methods to describe infant-mother responsivity and turn-taking [<xref rid="pone.0136492.ref003" ref-type="bibr">3</xref>–<xref rid="pone.0136492.ref005" ref-type="bibr">5</xref>]. While providing important insights into interactive structure, it remains unclear why mothers and their infants time their smiles as they do. Here we quantify in an objective manner whether the smiles of young infants are purposeful and attempt to discover what their purpose might be. Detecting goals in observed behaviors may provide a deeper understanding of typical social development, and of early-emerging disorders such as autism.</p>
+<p>The rich literature on smiling in face-to-face interactions between parents and infants under seven months of age is predominantly descriptive [<xref rid="pone.0136492.ref006" ref-type="bibr">6</xref>]. Duration-focused research has documented the tendency of infant and mother smiling to co-occur, but says less about which partner is responsible for the occurrence of joint smiling [<xref rid="pone.0136492.ref007" ref-type="bibr">7</xref>, <xref rid="pone.0136492.ref008" ref-type="bibr">8</xref>]. Research focusing on the frequency of smile onsets indicates that mothers tend to respond to infant smile onsets with a smile of their own [<xref rid="pone.0136492.ref001" ref-type="bibr">1</xref>, <xref rid="pone.0136492.ref009" ref-type="bibr">9</xref>, <xref rid="pone.0136492.ref010" ref-type="bibr">10</xref>]. Infants have a similar though weaker tendency to smile in response to mother smiles. It is unclear, however, how long infants maintain these responsive smiles. The current research offers a comprehensive examination of smiling patterns which integrates the duration and frequency approaches. Smile onsets (and offsets) are investigated with respect to their role in influencing the likelihood of subsequent smiling states characterized by the durations of their co-occurrences.</p>
+<p>How should the smiling goals of young infants be investigated? Interactive goals are thought to emerge with the development of intentional communication [<xref rid="pone.0136492.ref011" ref-type="bibr">11</xref>–<xref rid="pone.0136492.ref013" ref-type="bibr">13</xref>]. Typically, the concerted use of gestures to influence another’s actions—e.g., requesting a toy—constitutes the first evidence of intentional communication [<xref rid="pone.0136492.ref011" ref-type="bibr">11</xref>]. This type of intentional gesturing emerges between 8 and 12 months of age. During this period, infants also begin to show anticipatory smiling in which they gaze at an object, smile, and then turning the already smiling face to look at the mother, which is associated with means–ends gesturing to others [<xref rid="pone.0136492.ref014" ref-type="bibr">14</xref>–<xref rid="pone.0136492.ref016" ref-type="bibr">16</xref>]. However, infants four months of age and under do not use gestures in a concerted fashion to achieve goals, nor do they engage in anticipatory smiling. They do, however, engage in a rich interplay of smiling behavior with their parents. Are these smiles timed in a fashion that tends to produce particular dyadic end states?</p>
+<p>In the mid 20<sup>th</sup> century Norbert Weiner pioneered the development of Cybernetics, whose focus was the mathematical study of purposeful, goal-oriented behavior in animals and machines [<xref rid="pone.0136492.ref017" ref-type="bibr">17</xref>]. His pioneering work was influential in the development of Control Theory, the formal machinery behind modern robotics and automation [<xref rid="pone.0136492.ref018" ref-type="bibr">18</xref>–<xref rid="pone.0136492.ref021" ref-type="bibr">21</xref>]. A simple case of a controller is a thermostat. Its input is the room temperature and its output is a command for the heating system to turn on or off. The goal (or purpose) of the controller is to keep the room temperature within a desired range. In the current context, goal and purpose refer to hypothesized end states. The question at hand is whether the controller (e.g., the infant or mother) times its actions in a fashion consistent with producing those states. The use of the terms goal and purpose does not imply that the infant or mother are aware of these states.</p>
+<p>Advances in machine learning and more powerful computers have recently been used to reverse engineer the goals of controllers from their behavior. The use of control theory to reverse-engineer the goals of an agent from observations of its behavior is known as “inverse optimal control” [<xref rid="pone.0136492.ref018" ref-type="bibr">18</xref>–<xref rid="pone.0136492.ref020" ref-type="bibr">20</xref>]. The inputs to inverse optimal control algorithms are time-stamped sequences of sensory data and observed behaviors (e.g., the temperature of the room and the commands sent by the thermostat). These inputs are used to quantify whether there is evidence that the observed behaviors are goal-oriented and, if so, to infer what the goals are.</p>
+<p>In inverse optimal control, we typically use the term “agent” to refer to the system whose goals we want to discover, and “plant” to refer to the system that the agent is trying to control. While inverse optimal control algorithms are mathematically and computationally complex, their logic is simple. First, we develop a dynamical model of the plant [<xref rid="pone.0136492.ref022" ref-type="bibr">22</xref>]. The result is a model that predicts how the plant behaves under different conditions. Second, we formulate a <italic>hypothetical goal</italic> for the agent whose behavior we are trying to understand. Third, we use control theory [<xref rid="pone.0136492.ref023" ref-type="bibr">23</xref>] to find the optimal control policy to achieve the <italic>hypothesized goal</italic>. Fourth, we determine how closely the agent’s actions match the actions dictated by the optimal policy. We iterate steps two through four over a space of potential goals. If the optimal policy for a particular goal matches the observed actions better than the optimal policies corresponding to the other potential goals, then we conclude that the agent’s actions are directed towards that particular goal. Conversely, if the actions equally match all possible goals, there would be no evidence for goal-directedness on the part of the agent.</p>
+<p>Here we apply inverse optimal control methods to discover whether infants and mothers time their smiles in a purposeful manner and if so, what their purpose might be. To this end, we model the smile interactions between mothers and infants as a game between two agents where each agent is trying to control a plant (the other agent) to achieve its goals. When analyzing the purpose of the mother’s behavior we treat her as the agent and the infant as the “plant” she is trying to control. When analyzing the purpose of the infant’s behavior we treat the infant as the agent and mother as the “plant” that the infant is trying to control. The four goal states we compared (mother smiling, infant not smiling; infant smiling, mother not smiling; both smiling; neither smiling) represent a logical division of possible dyadic smiling states. To ensure that infants could see mother’s smiles we constrained our analysis to interactive periods in which infants were gazing at mother.</p>
+</sec>
+<sec id="sec002">
+<title>Methods: Mother-Infant Interaction Study</title>
+<p>Thirteen infant-mother dyads were observed in weekly face-to-face interactions between the ages of 4 and 17 weeks [<xref rid="pone.0136492.ref008" ref-type="bibr">8</xref>]. Mothers provided written informed consent, and the Purdue University Institutional Review Board approved all procedures. For each of the 13 dyads we computed the probability of 4 hypothetical goals separately for each agent (mother and infant): (1) maximize the time of mother smiling / infant smiling (simultaneous smiling), (2) maximize the time of mother smiling / infant not smiling, (3) maximize the time of mother not smiling / infant smiling, and (4) maximize the time of mother not smiling / infant not smiling. The basic logic of how we computed these probabilities follows the four steps described in the introduction. For instance, in the case of determining the probability of each goal for the infant, we perform the following steps: (1) fit a predictive model of mother’s smiling behavior, (2) hypothesize a particular goal for the infant, (3) compute the optimal smile timing for the infant to realize that goal as well as possible, and (4) determine how well the optimal smile timing fits the empirically observed smile timing. For complete details see <xref rid="pone.0136492.s002" ref-type="supplementary-material"><italic>S</italic>1 <italic>Methods</italic></xref>. Probabilities were compared with repeated-measures analysis of variance (using Greenhouse-Geisser degree of freedom corrections when appropriate), and followed-up with two-tailed <italic>t</italic>-tests; <italic>p</italic>-values below .05 were considered significant. Significant differences between values indexing the probability of each of the 4 goals would provide evidence that the observed behaviors served to achieve that goal.</p>
+</sec>
+<sec id="sec003">
+<title>Results: Mother-Infant Interaction Study</title>
+<p>An ANOVA of the probabilities produced by the inverse optimal control algorithm for each of the four goals revealed a significant effect of goal for both mothers (<italic>F</italic>(1.13,13.55) = 13.79, <italic>p</italic> = .002, η<sup>2</sup> = .54) and infants (<italic>F</italic>(1.08,12.99) = 66.96, <italic>p</italic> &lt; .001, η<sup>2</sup> = .85). For mothers the goal of maximizing simultaneous smiling had significantly higher probabilities (see <bold><xref rid="pone.0136492.g001" ref-type="fig">Fig 1</xref></bold>) than each of the three other goals (t(12) = 4.77, p &lt; .001 in comparison to maximizing simultaneous non-smiling, t(12) = 3.38, p = .005 in comparison to maximizing infant-only smiling, and t(12) = 3.70, p &lt; .001 in comparison to maximizing mother-only smiling). Further, for 10 out of the 13 mothers maximizing simultaneous smiling was their most probable goal (see <bold><xref rid="pone.0136492.t001" ref-type="table">Table 1</xref></bold>). This prevalence significantly differed from the chance level of 0.25 (binomial test p = .00013).</p>
+<fig id="pone.0136492.g001" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0136492.g001</object-id>
+<label>Fig 1</label>
+<caption>
+<title>Comparison of Infant and Mother Goals.</title>
+<p>Means of the probability distributions of potential mother and infant goals. Error bars are 95% confidence intervals of the mean.</p>
+</caption>
+<graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0136492.g001" position="float" xlink:type="simple"/>
+</fig>
+<table-wrap id="pone.0136492.t001" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0136492.t001</object-id>
+<label>Table 1</label> <caption><title>Inferred goal for mothers and infants.</title> <p>Shown are the proportion of mothers and infants who, according to our Bayesian model, exhibit behavior consistent with a goal of maximizing time spent in a particular smile configuration.</p></caption>
+<alternatives>
+<graphic id="pone.0136492.t001g" position="float" mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0136492.t001" xlink:type="simple"/>
+<table>
+<colgroup span="1">
+<col align="left" valign="middle" span="1"/>
+<col align="left" valign="middle" span="1"/>
+<col align="left" valign="middle" span="1"/>
+<col align="left" valign="middle" span="1"/>
+<col align="left" valign="middle" span="1"/>
+</colgroup>
+<thead>
+<tr>
+<th align="left" rowspan="1" colspan="1"/>
+<th align="left" rowspan="1" colspan="1">Both Not Smiling</th>
+<th align="left" rowspan="1" colspan="1">Infant-only Smiling</th>
+<th align="left" rowspan="1" colspan="1">Mother-only Smiling</th>
+<th align="left" rowspan="1" colspan="1">Mutual Smiling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" rowspan="1" colspan="1">Mothers</td>
+<td align="left" rowspan="1" colspan="1">0/13</td>
+<td align="left" rowspan="1" colspan="1">1/13</td>
+<td align="left" rowspan="1" colspan="1">2/13</td>
+<td align="left" rowspan="1" colspan="1">10/13</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1">Infants</td>
+<td align="left" rowspan="1" colspan="1">1/13</td>
+<td align="left" rowspan="1" colspan="1">0/13</td>
+<td align="left" rowspan="1" colspan="1">11/13</td>
+<td align="left" rowspan="1" colspan="1">1/13</td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+</table-wrap>
+<p>The same analysis applied to infants revealed that for infants only the goal of maximizing mother-only smiling had significantly higher probabilities (see <bold><xref rid="pone.0136492.g001" ref-type="fig">Fig 1</xref></bold>) than each of the three other goals (t(12) = 9.93, p &lt; .001 in comparison to maximizing simultaneously non-smiling, t(12) = 7.92, p &lt; .001 in comparison to maximizing infant-only smiling, and t(12) = 6.93, p &lt; .001 in comparison to maximizing simultaneous smiling). Further, for 11 out of the 13 infants maximizing mother-only smiling was the most probable goal (see <bold><xref rid="pone.0136492.t001" ref-type="table">Table 1</xref></bold>). This prevalence significantly differed from the chance level of 0.25 (binomial test p &lt; .001). That is, infants had the goal of creating and maintaining states in which they were being smiled at (by their mothers) but were not smiling themselves (see <bold><xref rid="pone.0136492.g001" ref-type="fig">Fig 1</xref></bold>).</p>
+<p>Infants exhibited sophisticated timing behaviors to achieve their goals. For example, consider the wait time distributions displayed by infants initiating a smile given that mother was smiling (<bold><xref rid="pone.0136492.g002" ref-type="fig">Fig 2</xref>)</bold>. <xref rid="pone.0136492.g002" ref-type="fig">Fig 2</xref> displays the empirical distribution of infant wait times in this context and the efficiency of each of these wait times in achieving each of the four goals analyzed. Infant smile initiations peaked at 1 second and then decayed. The posterior probability values indicated that infants prefer the configuration in which mother is smiling and infant is not. Consequently, one might expect that infants would be unlikely to ever smile when mother is already smiling. However, this was not the case. Implementing maximally efficient infant wait times before smiling involves optimal tradeoffs between immediate and long-term goal maximization. An infant strategy of never smiling maximizes immediate time in the mother-only smiling configuration, but at the potential expense of future time in the mother-only smiling configuration (because mother is likely to cease smiling after a number of seconds of smiling alone). Predictions derived from the goal of maximizing “mother-only” smiling appeared to maximize immediate seconds of mother-only smiling while minimizing the probability of mother terminating her smile.</p>
+<fig id="pone.0136492.g002" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0136492.g002</object-id>
+<label>Fig 2</label>
+<caption>
+<title>When to Smile? Performance for different strategies derived from different possible infant goals (each displayed in a different panel) versus the observed probability of infant actions.</title>
+<p>Mother is smiling and infant has just stopped smiling. On the x-axis are wait times until the infant smiles again. The y-axis displays the modeled performance (dashed lines) of various wait times (different plots show different possible goals) versus the empirical probability (dots) that the infant selects a particular wait time.</p>
+</caption>
+<graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0136492.g002" position="float" xlink:type="simple"/>
+</fig>
+</sec>
+<sec id="sec004">
+<title>Introduction: Human-Robot Interaction Study</title>
+<p>To further validate the results obtained using the inverse optimal control methods, we programmed a sophisticated child-like robot, named Diego-San, to play smile games with adults (see <bold><xref rid="pone.0136492.g003" ref-type="fig">Fig 3</xref></bold>). The key control program implemented the infant control strategy inferred from infant-mother interaction. This strategy was expected to maximize adult-only smiling, the corollary of mother-only smiling from the mother-infant study. Alternates to the infant control program were replay, mirror, and infant plus. Replay was a null hypothesis non-contingent model that enacted behaviors previously displayed to a previous participant. The mirror program enacted perfect smiling responsivity, smiling and not smiling to match the undergraduate’s smiling state. Infant plus was a hybrid program based on the infant model with increased likelihood of mirroring smiling and non-smiling states, and was designed to provide a powerful alternative to the infant program.</p>
+<fig id="pone.0136492.g003" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0136492.g003</object-id>
+<label>Fig 3</label>
+<caption>
+<title>Diego-San’s Expressions.</title>
+<p>Diego-San, the robot used to interact with adults smiling (left) and not smiling (right).</p>
+</caption>
+<graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0136492.g003" position="float" xlink:type="simple"/>
+</fig>
+</sec>
+<sec id="sec005">
+<title>Methods: Human-Robot Interaction Study</title>
+<p>UC San Diego undergraduates (N = 32) participated in the study. Each participant gave written consent, and UC San Diego’s Institutional Review Board approved the experiment. Each participant interacted with the robot for four counterbalanced periods. Each period lasted 3 minutes during which the robot tracked the participant's face using a combination of saccadic eye movements and head movements. In each period, the robot smiled according to one of the four control strategies detailed below:</p>
+<list list-type="simple">
+<list-item><p><italic>1- Infant</italic>: The robot smiled using the control policy synthesized from the inverse optimal control analysis of infant smile behavior described in the previous section.</p></list-item>
+<list-item><p><italic>2- Replay</italic>: The robot smiles were locked to the timing of the smiles generated during the session with the <italic>previous</italic> participant using the Infant controller. Notably, there was no contingency between the participant's smiling and Diego-San’s smiling.</p></list-item>
+<list-item><p><italic>3- Mirror</italic>: In this condition Diego-San always matched his smile to that of the participant, as if he were a “smile mirror”.</p></list-item>
+<list-item><p><italic>4 Infant Plus</italic>: The smile timing of this controller was identical to <italic>Infant</italic> with the modification that Diego-San was more likely to modulate his expression to be the same as the participant (elevated probability of matching of 50% per second). This controller was designed to test the effect on the participants of increasing the contingency of the robot’s smiling to the participants’ smiling (as compared to the Infant controller).</p></list-item>
+</list>
+<p>The robot’s perception of both facial location and facial expression (i.e. smile versus not smile) was given by the output of an automated facial expression recognition system, the Computer Expression Recognition Toolbox (CERT) [<xref rid="pone.0136492.ref024" ref-type="bibr">24</xref>]. CERT output was also used to quantify human smiling while interacting with the robot during each 3-minute period. After each period of interaction, we also administered a questionnaire to probe the participants' experiences interacting with Diego-San. The questionnaire [<xref rid="pone.0136492.ref025" ref-type="bibr">25</xref>] consisted of twenty-one five-point Likert scale items (e.g. is the robot <italic>1—apathetic</italic> or <italic>5—responsive</italic>) that we summed to give an overall rating of positivity of a particular participant toward Diego-San implementing a particular control strategy.</p>
+</sec>
+<sec id="sec006">
+<title>Results: Human-Robot Interaction Study</title>
+<p>First we assessed how the time spent in each of the four smile configurations (robot and human smile, robot smiles human does not smile, robot does not smile, human smiles, neither robot nor human smile) correlated with the participants’ positive rating of the interaction with the robot. The only significant correlation was between amount of time spent in simultaneous smile and positivity rating (<italic>r</italic> = .57,<italic>p</italic> &lt; .001). Thus, the human participants appeared to have similar preferences to the ones we had previously found in mothers: they rated their experience with the robot more positively when the robot simultaneously smiled with them.</p>
+<p>Next, we investigated the effect of the 4 controllers on the amount of time that the robot-human pair spent in the adult-only smiling state. We found a significant main effect of the controller on the duration of participant-only smiling (F(3,93) = 10.20, p &lt; .001, η<sup>2</sup> = .25). Subsequent paired t-tests revealed that the duration of participant-only smiling was significantly longer for the controller based on the inferred infant goals than for each of the other 3 control conditions (t(31) = 2.72, p = .011 in comparison to replay, t(31) = 4.78, p &lt; .0014 in comparison to mirror, and t(31) = 3.14, p = .004 in comparison to infant plus). Thus a controller embodying infant goals derived from mother-infant interaction had the predicted effect when transplanted into a robot that interacted with adult humans: it maximized the amount of adult-only smiling just as infants had maximized mother-only smiling.</p>
+</sec>
+<sec id="sec007" sec-type="conclusions">
+<title>Discussion</title>
+<p>The current study provides an innovative and rigorous mathematical analysis of smiling patterns in infants four months of age and younger. Control theory methods were used to objectively ascertain whether observed behaviors were purposeful and to infer their specific purpose. Mothers timed their smiles to maximize periods of simultaneous smiling with their infants. By contrast, infants timed their smiles to maximize periods of mother-only smiling.</p>
+<p>We found that infant (and mother) timed their smiles in a sophisticated manner that demonstrated mastery of the statistics of social interaction. Both partners timed their smiling to have a systematic impact on the other partner. We do not claim, however, that either partner was aware of timing their smiles in order to achieve a specific goal. Although Piaget [<xref rid="pone.0136492.ref026" ref-type="bibr">26</xref>] was explicitly interested in the development of mental representations of goals, modern behavioral researchers are agnostic as to whether the infant is or is not aware of the end state she or he is pursuing [<xref rid="pone.0136492.ref027" ref-type="bibr">27</xref>]. These results nevertheless suggest that infants leveraged social interaction patterns to achieve specific dyadic states well before there is evidence for conventional use of means-to-ends behavior.</p>
+<p>The four goal states we compared (mother smiling, infant not smiling; infant smiling, mother not smiling; both smiling; neither smiling) represent a logical division of possible dyadic smiling states. However, other goals are possible. Infants may have dynamic goals such as changing mother’s smiling state (whether or not she is smiling). Infant goals may also be unmeasured correlates of the goals we examined (such as producing a particular type of mother smile). Nevertheless, amongst the four compared goals there was clear evidence that some goals were more consonant with the data than others. To further validate our analysis, we ported the smile timing strategy used by infants into a robot that engaged in smile games with adult humans. The transplanted smile timing strategy replicated the infant-mother study: it maximized adult-only smiling.</p>
+<p>Mothers’ goals of maximizing simultaneous smiling suggest that mutual states of joint positive engagement are highly valued. These mutual states are likely one of the motivations for mothers’ high levels of smiling responses to infant smile onsets. The infant goal of maximizing mother-only smiling may be construed in behavioral ecological terms [<xref rid="pone.0136492.ref028" ref-type="bibr">28</xref>]. The infant smile may signal a desire for affiliative signals from the mother such as smiling. When mother smiling occurs, the infant smiling signal is no longer required. It is also possible that infants tend to cease smiling after a mother smile in order to regulate positive affective arousal [<xref rid="pone.0136492.ref029" ref-type="bibr">29</xref>].</p>
+<p>Mothers' and infants' goals differed. Mothers acted consonant with the goal of increasing mutual smiling while infants acted consonant with the goal of increasing mother-only smiling. Interaction involves emergent patterns that may differ from those favored by either party. Common dyadic patterns in infant-mother interaction may, in part, results from the juxtaposition of these different goals. The goal state that had similar posterior probability values for infant and mother was that in which neither infant or mother were smiling, a statistically common state of affairs in infant-mother interaction [<xref rid="pone.0136492.ref001" ref-type="bibr">1</xref>]. The conflict between mother and infant goals is relevant to a long-standing debate concerning infant responsivity. Early theorists were concerned that although infants appeared to alter their behavior in response to their parents, parents tended to time their actions in a fashion that made infant appear to be responsive [<xref rid="pone.0136492.ref030" ref-type="bibr">30</xref>]. Here we show that infants act in pursuit of goals that differ from parent goals, highlighting the role of the infant as an independent interacting agent.</p>
+<p>The study of goals during interaction typically begins with the emergence of intentional gesturing. Gestures are said to be intentional when they are used as means to an end. Infants might, for example, extend their arms to request a toy or snack. Such behavior emerges between 8 and 12 months in typically developing infants [<xref rid="pone.0136492.ref014" ref-type="bibr">14</xref>–<xref rid="pone.0136492.ref016" ref-type="bibr">16</xref>]. A similar difficulty exists in understanding manual gesturing to obtain food items observed among orangutans [<xref rid="pone.0136492.ref027" ref-type="bibr">27</xref>, <xref rid="pone.0136492.ref031" ref-type="bibr">31</xref>] and chimpanzees [<xref rid="pone.0136492.ref032" ref-type="bibr">32</xref>]. The non-human primate literature focuses on the specificity of signal-response associations between two individuals [<xref rid="pone.0136492.ref033" ref-type="bibr">33</xref>]. Here we build on the logic of signal-response associations using an inverse optimal control framework. This framework provides a quantitative foundation for pairing signaling actions and responses.</p>
+<p>The methods employed here provide support to the idea that by 4 months of age infants smile in a purposive fashion, and clarifies what those purposes are. The discovery of goal-oriented interactive behavior in infants under six months of age—and the elucidation of the goals underlying those behaviors—could shed light on our understanding of the development of typical and atypical social behavior [<xref rid="pone.0136492.ref034" ref-type="bibr">34</xref>]. For instance, the approach presented here could be used to analyze the interactive behavior of children who are at high risk for developing autism spectrum disorders (ASD) [<xref rid="pone.0136492.ref035" ref-type="bibr">35</xref>]. The analysis could help disambiguate whether young infants who will go on to develop an ASD have more object-oriented and less socially-oriented goals than infants who do not go on to an ASD outcome [<xref rid="pone.0136492.ref036" ref-type="bibr">36</xref>].</p>
+</sec>
+<sec id="sec008">
+<title>Supporting Information</title>
+<supplementary-material id="pone.0136492.s001" xlink:href="info:doi/10.1371/journal.pone.0136492.s001" mimetype="application/zip" position="float" xlink:type="simple">
+<label>S1 Data</label>
+<caption>
+<title>The supporting data contains the data from both the human robot interaction study, as well as the mother-infant interaction study.</title>
+<p>(ZIP)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pone.0136492.s002" xlink:href="info:doi/10.1371/journal.pone.0136492.s002" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document" position="float" xlink:type="simple">
+<label>S1 Methods</label>
+<caption>
+<title>The supporting methods contain a full description of the procedures used to perform the analyses in this paper.</title>
+<p>(DOCX)</p>
+</caption>
+</supplementary-material>
+</sec>
+</body>
+<back>
+<ack>
+<p>This research was supported by grants from the National Science Foundation (INT2-0808767 &amp; BCS1052736) and the National Institutes of Health (GM105004 MH 48680). We would also like to acknowledge Emily Barbara Prince for her work in helping to prepare this manuscript.</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="pone.0136492.ref001"><label>1</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Kaye</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Fogel</surname> <given-names>A</given-names></name>. <article-title>The temporal structure of face-to-face communication between mothers and infants</article-title>. <source>Developmental Psychology</source>, <year>1980</year>. <volume>16</volume>(<issue>5</issue>): p. <fpage>454</fpage>–<lpage>464</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref002"><label>2</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Sroufe</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Waters</surname> <given-names>E</given-names></name>. <article-title>The ontogenesis of smiling and laughter: A perspective on the organization of development in infancy</article-title>. <source>Psychological Review</source>, <year>1976</year>. <volume>83</volume>(<issue>3</issue>): p. <fpage>173</fpage>–<lpage>189</lpage>. <object-id pub-id-type="pmid">188058</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref003"><label>3</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Cohn</surname> <given-names>JF</given-names></name>, <name name-style="western"><surname>Tronick</surname> <given-names>EZ</given-names></name>. <article-title>Discrete versus scaling approaches to the description of mother-infant face-to-face interaction: Convergent validity and divergent applications</article-title>. <source>Developmental Psychology</source>, <year>1988</year>. <volume>24</volume>(<issue>3</issue>): p. <fpage>396</fpage>–<lpage>397</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref004"><label>4</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Chow</surname> <given-names>S</given-names></name>, <name name-style="western"><surname>Haltigan</surname> <given-names>JD</given-names></name>, <name name-style="western"><surname>Messinger</surname> <given-names>DS</given-names></name>. <article-title>Dynamic infant-parent affect coupling during the Face-to-Face/Still-Face</article-title>. <source>Emotion</source>, <year>2010</year>. <volume>10</volume>: p. <fpage>101</fpage>–<lpage>114</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1037/a0017824" xlink:type="simple">10.1037/a0017824</ext-link></comment> <object-id pub-id-type="pmid">20141307</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref005"><label>5</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Beebe</surname> <given-names>B</given-names></name>, <name name-style="western"><surname>Jaffe</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Buck</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Chen</surname> <given-names>H</given-names></name>, <name name-style="western"><surname>Cohen</surname> <given-names>P</given-names></name>, <name name-style="western"><surname>Blatt</surname> <given-names>S</given-names></name>, <etal>et al</etal>. <article-title>Six-week postpartum maternal self-criticism and dependency and 4-month mother-infant self- and interactive contingencies</article-title>. <source>Developmental Psychology</source>, <year>2007</year>. <volume>43</volume>(<issue>6</issue>): p. <fpage>1360</fpage>–<lpage>1376</lpage>. <object-id pub-id-type="pmid">18020817</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref006"><label>6</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Messinger</surname> <given-names>D</given-names></name>, <name name-style="western"><surname>Mahoor</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Chow</surname> <given-names>S</given-names></name>, <name name-style="western"><surname>Haltigan</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Cadavid</surname> <given-names>S</given-names></name>, <name name-style="western"><surname>Cohn</surname> <given-names>J</given-names></name>. <chapter-title>Early Emotional Communication: Novel Approaches to Interaction, in Social emotions in nature and artifact: Emotions in human and human-computer interaction</chapter-title>, <name name-style="western"><surname>Gratch</surname> <given-names>J.</given-names></name> and <name name-style="western"><surname>Marsella</surname> <given-names>S.</given-names></name>, Editors. <year>2014</year>, <publisher-name>Oxford University Press</publisher-name>. p. <fpage>162</fpage>–<lpage>180</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref007"><label>7</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Cohn</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Tronick</surname> <given-names>EZ</given-names></name>. <article-title>Mother-infant face-to-face interaction: The sequence of dyadic states at 3, 6, and 9 months</article-title>. <source>Developmental Psychology</source>, <year>1987</year>. <volume>23</volume>(<issue>1</issue>): p. <fpage>68</fpage>–<lpage>77</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref008"><label>8</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Messinger</surname> <given-names>D</given-names></name>, <name name-style="western"><surname>Fogel</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Dickson</surname> <given-names>K</given-names></name>. <article-title>All smiles are positive, but some smiles are more positive than others</article-title>. <source>Developmental Psychology</source>, <year>2001</year>. <volume>37</volume>(<issue>5</issue>): p. <fpage>642</fpage>–<lpage>653</lpage>. <object-id pub-id-type="pmid">11552760</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref009"><label>9</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Symons</surname> <given-names>D</given-names></name>, <name name-style="western"><surname>Morang</surname> <given-names>G</given-names></name>. <article-title>Responsiveness and dependency are different aspects of social contingencies: An example from mother and infant smiles</article-title>. <source>Infant Behavior and Development</source>, <year>1994</year>. <volume>17</volume>(<issue>2</issue>): p. <fpage>209</fpage>–<lpage>214</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref010"><label>10</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Cohn</surname> <given-names>JF</given-names></name>, <name name-style="western"><surname>Tronick</surname> <given-names>EZ</given-names></name>. <article-title>Mother-infant face-to-face interaction: Influence is bidirectional and unrelated to periodic cycles in either partner's behavior</article-title>. <source>Developmental Psychology</source>, <year>1988</year>. <volume>24</volume>(<issue>3</issue>): p. <fpage>386</fpage>–<lpage>392</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref011"><label>11</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Bates</surname> <given-names>E</given-names></name>, <name name-style="western"><surname>Camaioni</surname> <given-names>L</given-names></name>, <name name-style="western"><surname>Volterra</surname> <given-names>V</given-names></name>. <article-title>The acquisition of performatives prior to speech</article-title>. <source>Merrill-Palmer Quarterly</source>, <year>1975</year>. <volume>21</volume>(<issue>3</issue>): p. <fpage>205</fpage>–<lpage>226</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref012"><label>12</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Bates</surname> <given-names>E</given-names></name>. <chapter-title>The emergence of symbols: Cognition and communication in infancy</chapter-title>. <year>1979</year>, <publisher-loc>New York</publisher-loc>: <publisher-name>Academic Press</publisher-name>.</mixed-citation></ref>
+<ref id="pone.0136492.ref013"><label>13</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Golinkoff</surname> <given-names>RM</given-names></name>. <article-title>I beg your pardon?: the preverbal negotiation of failed messages</article-title>. <source>Journal of child language</source>, <year>1986</year>. <volume>13</volume>(<issue>03</issue>): p. <fpage>455</fpage>–<lpage>476</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref014"><label>14</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Jones</surname> <given-names>SS</given-names></name>, <name name-style="western"><surname>Collins</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Hong</surname> <given-names>HW</given-names></name>. <article-title>An audience effect on smile production in 10-month-old infants</article-title>. <source>Psychological Science</source>, <year>1991</year>. <volume>2</volume>(<issue>1</issue>): p. <fpage>45</fpage>–<lpage>49</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref015"><label>15</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Jones</surname> <given-names>SS</given-names></name>, <name name-style="western"><surname>Hong</surname> <given-names>HW</given-names></name><article-title>. Onset of voluntary communication: Smiling looks to mother</article-title>. <source>Infancy</source>, <year>2001</year>. <volume>2</volume>(<issue>3</issue>): p. <fpage>353</fpage>–<lpage>370</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref016"><label>16</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Venezia</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Messinger</surname> <given-names>DS</given-names></name>, <name name-style="western"><surname>Thorp</surname> <given-names>D</given-names></name>, <name name-style="western"><surname>Mundy</surname> <given-names>P</given-names></name>. <article-title>The Development of Anticipatory Smiling</article-title>. <source>Infancy</source>, <year>2004</year>. <volume>6</volume>(<issue>3</issue>): p. <fpage>397</fpage>–<lpage>406</lpage>. <object-id pub-id-type="pmid">16467930</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref017"><label>17</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Wiener</surname> <given-names>N</given-names></name>. <source>Cybernetics: Or Control and Communication in the Animal and the Machine</source>. <edition>2nd ed.</edition> <year>1948</year>, <publisher-loc>Camb. Mass.</publisher-loc>: <publisher-name>MIT Press</publisher-name>.</mixed-citation></ref>
+<ref id="pone.0136492.ref018"><label>18</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Ng</surname> <given-names>AY</given-names></name>, <name name-style="western"><surname>Russell</surname> <given-names>S</given-names></name>. <chapter-title>Algorithms for inverse reinforcement learning. in Apprenticeship learning via inverse reinforcement learning</chapter-title>. <year>2000</year>. <publisher-loc>Banff, Alberta, Canada</publisher-loc>: <publisher-name>ACM</publisher-name>.</mixed-citation></ref>
+<ref id="pone.0136492.ref019"><label>19</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Abbeel</surname> <given-names>P</given-names></name>, <name name-style="western"><surname>Ng</surname> <given-names>AY</given-names></name>. <chapter-title>Proceedings of the twenty-first international conference on Machine learning. in Apprenticeship learning via inverse reinforcement learning</chapter-title>. <year>2004</year>. <publisher-loc>Banff, Alberta, Canada</publisher-loc>: <publisher-name>ACM</publisher-name>.</mixed-citation></ref>
+<ref id="pone.0136492.ref020"><label>20</label><mixed-citation publication-type="other" xlink:type="simple">Ramachandran D, Amir E. Bayesian inverse reinforcement learning, in Proceedings of the 20th international joint conference on Artifical intelligence. 2007, Morgan Kaufmann Publishers Inc.: Hyderabad, India. p. 2586–2591.</mixed-citation></ref>
+<ref id="pone.0136492.ref021"><label>21</label><mixed-citation publication-type="other" xlink:type="simple">Tassa Y, Erez T, Todorov E. Synthesis and stabilization of complex behaviors through online trajectory optimization. in Intelligent Robots and Systems (IROS), 2012 IEEE/RSJ International Conference on. 2012. IEEE.</mixed-citation></ref>
+<ref id="pone.0136492.ref022"><label>22</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Ljung</surname> <given-names>L</given-names></name>. <source>System Identification: Theory for the User</source>. <year>1999</year>, <publisher-loc>New York</publisher-loc>: <publisher-name>John Wiley &amp; Sons, Inc.</publisher-name></mixed-citation></ref>
+<ref id="pone.0136492.ref023"><label>23</label><mixed-citation publication-type="other" xlink:type="simple">Bertsekas DP. Dynamic programming and optimal control. Vol. 1.</mixed-citation></ref>
+<ref id="pone.0136492.ref024"><label>24</label><mixed-citation publication-type="other" xlink:type="simple">Littlewort G, Whitehill J, Wu T, Fasel I, Frank M, Movellan J, et al. The computer expression recognition toolbox (CERT). in Automatic Face &amp; Gesture Recognition and Workshops (FG 2011), 2011 IEEE International Conference on. 2011.</mixed-citation></ref>
+<ref id="pone.0136492.ref025"><label>25</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Bartneck</surname> <given-names>C</given-names></name>, <name name-style="western"><surname>Croft</surname> <given-names>E</given-names></name>, <name name-style="western"><surname>Kulic</surname> <given-names>D</given-names></name>. <article-title>Measurement Instruments for the Anthropomorphism, Animacy, Likeability, Perceived Intelligence, and Perceived Safety of Robots</article-title>. <source>International Journal of Social Robotics</source>, <year>2009</year>. <volume>1</volume>(<issue>1</issue>): p. <fpage>71</fpage>–<lpage>81</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref026"><label>26</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Piaget</surname> <given-names>J</given-names></name>. <chapter-title>The origins of intelligence in children</chapter-title>. <year>1952</year>, <publisher-loc>New York</publisher-loc>: <publisher-name>International University Press</publisher-name>.</mixed-citation></ref>
+<ref id="pone.0136492.ref027"><label>27</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Bard</surname> <given-names>KA</given-names></name>. <article-title>Intentional behavior and intentional communication in young free-ranging orangutans</article-title>. <source>Child Dev</source>, <year>1992</year>. <volume>63</volume>(<issue>5</issue>): p. <fpage>1186</fpage>–<lpage>97</lpage>. <object-id pub-id-type="pmid">1446548</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref028"><label>28</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Fridlund</surname> <given-names>AJ</given-names></name>. <chapter-title>Human facial expression: An evolutionary view</chapter-title>. <year>1994</year>, <publisher-loc>New York</publisher-loc>: <publisher-name>Academic Press</publisher-name>.</mixed-citation></ref>
+<ref id="pone.0136492.ref029"><label>29</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Yale</surname> <given-names>ME</given-names></name>, <name name-style="western"><surname>Messinger</surname> <given-names>DS</given-names></name>, <name name-style="western"><surname>Cobo-Lewis</surname> <given-names>AB</given-names></name>. <article-title>The temporal coordination of early infant communication</article-title>. <source>Developmental Psychology</source>, <year>2003</year>. <volume>39</volume>(<issue>5</issue>): p. <fpage>815</fpage>–<lpage>824</lpage>. <object-id pub-id-type="pmid">12952396</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref030"><label>30</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Kaye</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Wells</surname> <given-names>AJ</given-names></name>. <article-title>Mother's jiggling and the burst-pause pattern in neonatal feeding</article-title>. <source>Infant Behavior and Development</source>, <year>1980</year>. <volume>3</volume>: p. <fpage>29</fpage>–<lpage>46</lpage>.</mixed-citation></ref>
+<ref id="pone.0136492.ref031"><label>31</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Cartmill</surname> <given-names>EA</given-names></name>, <name name-style="western"><surname>Byrne</surname> <given-names>RW</given-names></name>. <article-title>Orangutans modify their gestural signaling according to their audience's comprehension</article-title>. <source>Current Biology</source>, <year>2007</year>. <volume>17</volume>(<issue>15</issue>): p. <fpage>1345</fpage>–<lpage>1348</lpage>. <object-id pub-id-type="pmid">17683939</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref032"><label>32</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Leavens</surname> <given-names>DA</given-names></name>, <name name-style="western"><surname>Russell</surname> <given-names>JL</given-names></name>, <name name-style="western"><surname>Hopkins</surname> <given-names>WD</given-names></name>. <article-title>Intentionality as measured in the persistence and elaboration of communication by chimpanzees (Pan troglodytes)</article-title>. <source>Child Dev</source>, <year>2005</year>. <volume>76</volume>(<issue>1</issue>): p. <fpage>291</fpage>–<lpage>306</lpage>. <object-id pub-id-type="pmid">15693773</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref033"><label>33</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Genty</surname> <given-names>E</given-names></name>, <name name-style="western"><surname>Clay</surname> <given-names>Z</given-names></name>, <name name-style="western"><surname>Hobaiter</surname> <given-names>C</given-names></name>, <name name-style="western"><surname>Zuberbühler</surname> <given-names>K</given-names></name>. <article-title>Multi-Modal Use of a Socially Directed Call in Bonobos</article-title>. <source>PLoS ONE</source>, <year>2014</year>. <volume>9</volume>(<issue>1</issue>): p. <fpage>e84738</fpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1371/journal.pone.0084738" xlink:type="simple">10.1371/journal.pone.0084738</ext-link></comment> <object-id pub-id-type="pmid">24454745</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref034"><label>34</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Meltzoff</surname> <given-names>AN</given-names></name>, <name name-style="western"><surname>Kuhl</surname> <given-names>PK</given-names></name>, <name name-style="western"><surname>Movellan</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Sejnowski</surname> <given-names>TJ</given-names></name>. <article-title>Foundations for a New Science of Learning</article-title>. <source>Science</source>, <year>2009</year>. <volume>325</volume>(<issue>5938</issue>): p. <fpage>284</fpage>–<lpage>288</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1126/science.1175626" xlink:type="simple">10.1126/science.1175626</ext-link></comment> <object-id pub-id-type="pmid">19608908</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref035"><label>35</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Messinger</surname> <given-names>DS</given-names></name>, <name name-style="western"><surname>Young</surname> <given-names>GS</given-names></name>, <name name-style="western"><surname>Webb</surname> <given-names>S</given-names></name>, <name name-style="western"><surname>Ozonoff</surname> <given-names>S</given-names></name>, <name name-style="western"><surname>Bryson</surname> <given-names>SE</given-names></name>, <name name-style="western"><surname>Carter</surname> <given-names>A</given-names></name>, <etal>et al</etal>. <article-title>Early sex differences are not autism-specific: A Baby Siblings Research Consortium (BSRC) study</article-title>. <source>Mol Autism</source>, <year>2015</year>. <volume>6</volume>: p. <fpage>32</fpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1186/s13229-015-0027-y" xlink:type="simple">10.1186/s13229-015-0027-y</ext-link></comment> <object-id pub-id-type="pmid">26045943</object-id></mixed-citation></ref>
+<ref id="pone.0136492.ref036"><label>36</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Chevallier</surname> <given-names>C</given-names></name>, <name name-style="western"><surname>Kohls</surname> <given-names>G</given-names></name>, <name name-style="western"><surname>Troiani</surname> <given-names>V</given-names></name>, <name name-style="western"><surname>Brodkin</surname> <given-names>ES</given-names></name>, <name name-style="western"><surname>Schultz</surname> <given-names>RT</given-names></name>. <article-title>The social motivation theory of autism</article-title>. <source>Trends in cognitive sciences</source>, <year>2012</year>. <volume>16</volume>(<issue>4</issue>): p. <fpage>231</fpage>–<lpage>239</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.tics.2012.02.007" xlink:type="simple">10.1016/j.tics.2012.02.007</ext-link></comment> <object-id pub-id-type="pmid">22425667</object-id></mixed-citation></ref>
+</ref-list>
+</back>
+</article>

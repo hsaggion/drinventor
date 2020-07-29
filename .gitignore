@@ -1,0 +1,8 @@
+.metadata/
+.settings/
+.project
+.classpath
+target/
+doc/
+home/
+.svn/
