@@ -20,6 +20,6 @@ The code of the Dr. Inventor Text Mining Framework has been developed by the [La
 
 **HOW TO CONTRIBUTE**: in order to contribute to the Dr. Inventor Framework you can create pull requests to our GitHub repository. In order to ask for any help, you can create an issue in our GitHub repository.
 
-**CONTACT**: for any information, please contact us at 
+**CONTACT**: for any information, please contact us at horacio.saggion@upf.edu or francesco.ronzano@upf.edu
 
 
