@@ -1601,251 +1601,14 @@ public class ObjectGenerator {
 				// List of authors with name, surname, email, affiliation
 				String sourceDocFeature = GateUtil.getStringFeature(cacheManager.getGateDoc(), "source").orElse(null);
 				if(sourceDocFeature != null && sourceDocFeature.equals(SourceENUM.GROBID.toString())) {
-					// Retrieve author information from GROBID analysis
-					List<Annotation> authorAnnotationList = GateUtil.getAnnInDocOrder(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, ImporterGROBID.GROBIDauthor);
+					grobidExtractAuthor(cacheManager, resultImpl);
 
-					Long abstractStartOffset = null;
-					Optional<Annotation> abstractAnnotation = GateUtil.getFirstAnnotationInDocOrder(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, ImporterGROBID.GROBIDabstract);
-					if(abstractAnnotation.isPresent() && abstractAnnotation.get() != null) {
-						abstractStartOffset = abstractAnnotation.get().getStartNode().getOffset();
-					}
-					
-					if(authorAnnotationList != null && authorAnnotationList.size() > 0) {
-						for(Annotation authorAnn : authorAnnotationList) {
-							if(authorAnn != null && (abstractStartOffset == null || (abstractStartOffset != null && authorAnn.getEndNode().getOffset() <= abstractStartOffset)) ) {
-								String authorName = null;
-								List<Annotation> persNameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "persName", authorAnn);
-								if(persNameList != null && persNameList.size() > 0) {
-									Optional<String> authNameOpt = GateUtil.getAnnotationText(persNameList.get(0), cacheManager.getGateDoc());
-									if(authNameOpt.isPresent() && authNameOpt.get() != null && !authNameOpt.get().equals("")) {
-										authorName = authNameOpt.get();
-									}
-								}
-								
-								if(authorName != null && !authorName.trim().equals("")) {
-									AuthorImpl newAuthor = new AuthorImpl(cacheManager, normalizeText(authorName).trim(), null, null);
-									
-									// Forename
-									List<Annotation> forenameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "forename", authorAnn);
-									if(forenameList != null && forenameList.size() > 0) {
-										Optional<String> forenameOpt = GateUtil.getAnnotationText(forenameList.get(0), cacheManager.getGateDoc());
-										if(forenameOpt.isPresent() && forenameOpt.get() != null && !forenameOpt.get().equals("")) {
-											newAuthor.setFirstName(normalizeText(forenameOpt.get()).trim());
-										}
-									}
-									
-									// Surname
-									List<Annotation> surnameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "surname", authorAnn);
-									if(surnameList != null && surnameList.size() > 0) {
-										Optional<String> surnameOpt = GateUtil.getAnnotationText(surnameList.get(0), cacheManager.getGateDoc());
-										if(surnameOpt.isPresent() && surnameOpt.get() != null && !surnameOpt.get().equals("")) {
-											newAuthor.setSurname(normalizeText(surnameOpt.get()).trim());
-										}
-									}
-									
-									// Email
-									List<Annotation> emailList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "email", authorAnn);
-									if(emailList != null && emailList.size() > 0) {
-										Optional<String> emailOpt = GateUtil.getAnnotationText(emailList.get(0), cacheManager.getGateDoc());
-										if(emailOpt.isPresent() && emailOpt.get() != null && !emailOpt.get().equals("")) {
-											newAuthor.setEmail(normalizeText(emailOpt.get()).trim());
-										}
-									}
-									
-									// Affiliation
-									List<Annotation> affiliationList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "affiliation", authorAnn);
-									if(affiliationList != null && affiliationList.size() > 0) {
-										for(Annotation affil : affiliationList) {
-											if(affil != null) {
-												InstitutionImpl newAffiliation = new InstitutionImpl(cacheManager);
-												
-												// Affiliation fields:
-												// ADDED: orgName, address, country
-												// TO ADD: marker, URL, labs, instits. addr, region, settlement, acronym 
-												
-												// Name
-												List<Annotation> orgNameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "orgName", affil);
-												if(orgNameList != null && orgNameList.size() > 0) {
-													Optional<String> orgNameOpt = GateUtil.getAnnotationText(orgNameList.get(0), cacheManager.getGateDoc());
-													if(orgNameOpt.isPresent() && orgNameOpt.get() != null && !orgNameOpt.get().equals("")) {
-														newAffiliation.setName(normalizeText(orgNameOpt.get()).trim());
-													}
-												}
-												
-												// Address
-												List<Annotation> addressList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "address", affil);
-												if(addressList != null && addressList.size() > 0) {
-													Optional<String> addressOpt = GateUtil.getAnnotationText(addressList.get(0), cacheManager.getGateDoc());
-													if(addressOpt.isPresent() && addressOpt.get() != null && !addressOpt.get().equals("")) {
-														newAffiliation.setAddress(normalizeText(addressOpt.get()).trim());
-													}
-												}
-												
-												// Country
-												List<Annotation> countryList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "country", affil);
-												if(countryList != null && countryList.size() > 0) {
-													Optional<String> countryOpt = GateUtil.getAnnotationText(countryList.get(0), cacheManager.getGateDoc());
-													if(countryOpt.isPresent() && countryOpt.get() != null && !countryOpt.get().equals("")) {
-														newAffiliation.setState(normalizeText(countryOpt.get()).trim());
-													}
-												}
-												
-												if(newAffiliation.getName() != null && !newAffiliation.getName().equals("")) {
-													newAuthor.addAffiliation(newAffiliation);
-												}
-												
-											}
-										}
-									}
-									
-									resultImpl.addAuthor(newAuthor);
-								}
-							}
-						}
-					}
-					
 				}
 				else if(sourceDocFeature != null && sourceDocFeature.equals(SourceENUM.JATS.toString())) {
-					// Retrieve author information from JATS tags
-					List<Annotation> authorAnnotationList = GateUtil.getAnnInDocOrder(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontrib);
+					jatsExtractAuthor(cacheManager, resultImpl);
 
-					Long abstractStartOffset = null;
-					Optional<Annotation> abstractAnnotation = GateUtil.getFirstAnnotationInDocOrder(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSabstract);
-					if(abstractAnnotation.isPresent() && abstractAnnotation.get() != null) {
-						abstractStartOffset = abstractAnnotation.get().getStartNode().getOffset();
-					}
-					
-					if(authorAnnotationList != null && authorAnnotationList.size() > 0) {
-						for(Annotation authorAnn : authorAnnotationList) {
-							if(authorAnn != null && GateUtil.getStringFeature(authorAnn, ImporterJATS.JATScontrib_authTypeFeat).orElse(null) != null &&
-									GateUtil.getStringFeature(authorAnn, ImporterJATS.JATScontrib_authTypeFeat).get().equals("author") &&
-								(abstractStartOffset == null || (abstractStartOffset != null && authorAnn.getEndNode().getOffset() <= abstractStartOffset)) ) {
-								
-								// Full name
-								String authorName = null;
-								List<Annotation> persNameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontribName, authorAnn);
-								if(persNameList != null && persNameList.size() > 0) {
-									Optional<String> authNameOpt = GateUtil.getAnnotationText(persNameList.get(0), cacheManager.getGateDoc());
-									if(authNameOpt.isPresent() && authNameOpt.get() != null && !authNameOpt.get().equals("")) {
-										authorName = authNameOpt.get();
-									}
-								}
-								
-								if(authorName != null && !authorName.trim().equals("")) {
-									AuthorImpl newAuthor = new AuthorImpl(cacheManager, normalizeText(authorName).trim(), null, null);
-									
-									// Forename
-									List<Annotation> forenameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontribGivenName, authorAnn);
-									if(forenameList != null && forenameList.size() > 0) {
-										Optional<String> forenameOpt = GateUtil.getAnnotationText(forenameList.get(0), cacheManager.getGateDoc());
-										if(forenameOpt.isPresent() && forenameOpt.get() != null && !forenameOpt.get().equals("")) {
-											newAuthor.setFirstName(normalizeText(forenameOpt.get()).trim());
-										}
-									}
-									
-									// Surname
-									List<Annotation> surnameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontribSurname, authorAnn);
-									if(surnameList != null && surnameList.size() > 0) {
-										Optional<String> surnameOpt = GateUtil.getAnnotationText(surnameList.get(0), cacheManager.getGateDoc());
-										if(surnameOpt.isPresent() && surnameOpt.get() != null && !surnameOpt.get().equals("")) {
-											newAuthor.setSurname(normalizeText(surnameOpt.get()).trim());
-										}
-									}
-									
-									// Xref
-									List<String> xrefIDs = new ArrayList<String>();
-									List<Annotation> xrefList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontribXref, authorAnn);
-									if(xrefList != null && xrefList.size() > 0) {
-										for(Annotation xrefAnn : xrefList) {
-											Optional<String> xrefOpt = GateUtil.getAnnotationText(xrefAnn, cacheManager.getGateDoc());
-											if(xrefOpt.isPresent() && xrefOpt.get() != null && !xrefOpt.get().equals("")) {
-												xrefIDs.add(normalizeText(xrefOpt.get()).trim());
-											}
-										}
-									}
-									
-									// Affiliation
-									List<Annotation> affiliationList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliation, authorAnn);
-									if(affiliationList != null && affiliationList.size() > 0) {
-										for(Annotation affil : affiliationList) {
-											if(affil != null && GateUtil.getStringFeature(affil, "id").orElse(null) != null &&
-													xrefIDs.contains(GateUtil.getStringFeature(affil, "id").orElse(null))) {
-												
-												InstitutionImpl newAffiliation = new InstitutionImpl(cacheManager);
-												
-												// Affiliation fields:
-												
-												// Full text
-												newAffiliation.setFullText( (GateUtil.getAnnotationText(affil, cacheManager.getGateDoc()).orElse(null) != null) ?
-														normalizeText(GateUtil.getAnnotationText(affil, cacheManager.getGateDoc()).orElse(null).trim()) : null);
-												
-												// Name
-												List<Annotation> orgNameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_INSTITUTION, affil);
-												if(orgNameList != null && orgNameList.size() > 0) {
-													Optional<String> orgNameOpt = GateUtil.getAnnotationText(orgNameList.get(0), cacheManager.getGateDoc());
-													if(orgNameOpt.isPresent() && orgNameOpt.get() != null && !orgNameOpt.get().equals("")) {
-														newAffiliation.setName(normalizeText(orgNameOpt.get()).trim());
-													}
-												}
-												
-												// Address
-												List<Annotation> addressList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine, affil);
-												if(addressList != null && addressList.size() > 0) {
-													Optional<String> addressOpt = GateUtil.getAnnotationText(addressList.get(0), cacheManager.getGateDoc());
-													if(addressOpt.isPresent() && addressOpt.get() != null && !addressOpt.get().equals("")) {
-														newAffiliation.setAddress(normalizeText(addressOpt.get()).trim());
-													}
-												}
-												
-												// Country
-												List<Annotation> countryList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_STATE, affil);
-												if(countryList != null && countryList.size() > 0) {
-													Optional<String> countryOpt = GateUtil.getAnnotationText(countryList.get(0), cacheManager.getGateDoc());
-													if(countryOpt.isPresent() && countryOpt.get() != null && !countryOpt.get().equals("")) {
-														newAffiliation.setState(normalizeText(countryOpt.get()).trim());
-													}
-												}
-												
-												// URL / ext-link
-												List<Annotation> uriList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_URI, affil);
-												List<Annotation> extLinkList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_EXTLINK, affil);
-												if(uriList != null && uriList.size() > 0) {
-													Optional<String> uriOpt = GateUtil.getAnnotationText(uriList.get(0), cacheManager.getGateDoc());
-													if(uriOpt.isPresent() && uriOpt.get() != null && !uriOpt.get().equals("")) {
-														newAffiliation.setURL(normalizeText(uriOpt.get()).trim());
-													}
-												}
-												else if(extLinkList != null && extLinkList.size() > 0) {
-													Optional<String> extLinkOpt = GateUtil.getAnnotationText(extLinkList.get(0), cacheManager.getGateDoc());
-													if(extLinkOpt.isPresent() && extLinkOpt.get() != null && !extLinkOpt.get().equals("")) {
-														newAffiliation.setURL(normalizeText(extLinkOpt.get()).trim());
-													}
-												}
-												
-												// Email of author
-												List<Annotation> emailList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_EMAIL, affil);
-												if(emailList != null && emailList.size() > 0) {
-													Optional<String> emailOpt = GateUtil.getAnnotationText(emailList.get(0), cacheManager.getGateDoc());
-													if(emailOpt.isPresent() && emailOpt.get() != null && !emailOpt.get().equals("")) {
-														newAuthor.setEmail(normalizeText(emailOpt.get()).trim());
-													}
-												}
-												
-												if(newAffiliation.getName() != null && !newAffiliation.getName().equals("")) {
-													newAuthor.addAffiliation(newAffiliation);
-												}
-												
-											}
-										}
-									}
-									
-									resultImpl.addAuthor(newAuthor);
-								}
-							}
-						}
-					}
-					
 				}
+
 				if(sourceDocFeature != null && sourceDocFeature.equals(SourceENUM.PDFEXT.toString())) {
 					// Retrieve author information from JATS tags
 					List<Annotation> authorAnnotationList = GateUtil.getAnnInDocOrder(cacheManager.getGateDoc(), ImporterPDFEXT.PDFEXTAnnSet, ImporterPDFEXT.PDFEXTauthor);
@@ -2136,6 +1899,252 @@ public class ObjectGenerator {
 			return resultImpl;
 		}
 		
+	}
+
+	private static void jatsExtractAuthor(DocCacheManager cacheManager, HeaderImpl resultImpl) {
+		// Retrieve author information from JATS tags
+		List<Annotation> authorAnnotationList = GateUtil.getAnnInDocOrder(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontrib);
+
+		Long abstractStartOffset = null;
+		Optional<Annotation> abstractAnnotation = GateUtil.getFirstAnnotationInDocOrder(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSabstract);
+		if(abstractAnnotation.isPresent() && abstractAnnotation.get() != null) {
+			abstractStartOffset = abstractAnnotation.get().getStartNode().getOffset();
+		}
+
+		if(authorAnnotationList != null && authorAnnotationList.size() > 0) {
+			for(Annotation authorAnn : authorAnnotationList) {
+				if(authorAnn != null && GateUtil.getStringFeature(authorAnn, ImporterJATS.JATScontrib_authTypeFeat).orElse(null) != null &&
+						GateUtil.getStringFeature(authorAnn, ImporterJATS.JATScontrib_authTypeFeat).get().equals("author") &&
+					(abstractStartOffset == null || (abstractStartOffset != null && authorAnn.getEndNode().getOffset() <= abstractStartOffset)) ) {
+
+					// Full name
+					String authorName = null;
+					List<Annotation> persNameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontribName, authorAnn);
+					if(persNameList != null && persNameList.size() > 0) {
+						Optional<String> authNameOpt = GateUtil.getAnnotationText(persNameList.get(0), cacheManager.getGateDoc());
+						if(authNameOpt.isPresent() && authNameOpt.get() != null && !authNameOpt.get().equals("")) {
+							authorName = authNameOpt.get();
+						}
+					}
+
+					if(authorName != null && !authorName.trim().equals("")) {
+						AuthorImpl newAuthor = new AuthorImpl(cacheManager, normalizeText(authorName).trim(), null, null);
+
+						// Forename
+						List<Annotation> forenameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontribGivenName, authorAnn);
+						if(forenameList != null && forenameList.size() > 0) {
+							Optional<String> forenameOpt = GateUtil.getAnnotationText(forenameList.get(0), cacheManager.getGateDoc());
+							if(forenameOpt.isPresent() && forenameOpt.get() != null && !forenameOpt.get().equals("")) {
+								newAuthor.setFirstName(normalizeText(forenameOpt.get()).trim());
+							}
+						}
+
+						// Surname
+						List<Annotation> surnameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontribSurname, authorAnn);
+						if(surnameList != null && surnameList.size() > 0) {
+							Optional<String> surnameOpt = GateUtil.getAnnotationText(surnameList.get(0), cacheManager.getGateDoc());
+							if(surnameOpt.isPresent() && surnameOpt.get() != null && !surnameOpt.get().equals("")) {
+								newAuthor.setSurname(normalizeText(surnameOpt.get()).trim());
+							}
+						}
+
+						// Xref
+						List<String> xrefIDs = new ArrayList<String>();
+						List<Annotation> xrefList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontribXref, authorAnn);
+						if(xrefList != null && xrefList.size() > 0) {
+							for(Annotation xrefAnn : xrefList) {
+								Optional<String> xrefOpt = GateUtil.getAnnotationText(xrefAnn, cacheManager.getGateDoc());
+								if(xrefOpt.isPresent() && xrefOpt.get() != null && !xrefOpt.get().equals("")) {
+									xrefIDs.add(normalizeText(xrefOpt.get()).trim());
+								}
+							}
+						}
+
+						// Affiliation
+						List<Annotation> affiliationList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliation, authorAnn);
+						if(affiliationList != null && affiliationList.size() > 0) {
+							for(Annotation affil : affiliationList) {
+								if(affil != null && GateUtil.getStringFeature(affil, "id").orElse(null) != null &&
+										xrefIDs.contains(GateUtil.getStringFeature(affil, "id").orElse(null))) {
+
+									InstitutionImpl newAffiliation = new InstitutionImpl(cacheManager);
+
+									// Affiliation fields:
+
+									// Full text
+									newAffiliation.setFullText( (GateUtil.getAnnotationText(affil, cacheManager.getGateDoc()).orElse(null) != null) ?
+											normalizeText(GateUtil.getAnnotationText(affil, cacheManager.getGateDoc()).orElse(null).trim()) : null);
+
+									// Name
+									List<Annotation> orgNameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_INSTITUTION, affil);
+									if(orgNameList != null && orgNameList.size() > 0) {
+										Optional<String> orgNameOpt = GateUtil.getAnnotationText(orgNameList.get(0), cacheManager.getGateDoc());
+										if(orgNameOpt.isPresent() && orgNameOpt.get() != null && !orgNameOpt.get().equals("")) {
+											newAffiliation.setName(normalizeText(orgNameOpt.get()).trim());
+										}
+									}
+
+									// Address
+									List<Annotation> addressList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine, affil);
+									if(addressList != null && addressList.size() > 0) {
+										Optional<String> addressOpt = GateUtil.getAnnotationText(addressList.get(0), cacheManager.getGateDoc());
+										if(addressOpt.isPresent() && addressOpt.get() != null && !addressOpt.get().equals("")) {
+											newAffiliation.setAddress(normalizeText(addressOpt.get()).trim());
+										}
+									}
+
+									// Country
+									List<Annotation> countryList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_STATE, affil);
+									if(countryList != null && countryList.size() > 0) {
+										Optional<String> countryOpt = GateUtil.getAnnotationText(countryList.get(0), cacheManager.getGateDoc());
+										if(countryOpt.isPresent() && countryOpt.get() != null && !countryOpt.get().equals("")) {
+											newAffiliation.setState(normalizeText(countryOpt.get()).trim());
+										}
+									}
+
+									// URL / ext-link
+									List<Annotation> uriList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_URI, affil);
+									List<Annotation> extLinkList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_EXTLINK, affil);
+									if(uriList != null && uriList.size() > 0) {
+										Optional<String> uriOpt = GateUtil.getAnnotationText(uriList.get(0), cacheManager.getGateDoc());
+										if(uriOpt.isPresent() && uriOpt.get() != null && !uriOpt.get().equals("")) {
+											newAffiliation.setURL(normalizeText(uriOpt.get()).trim());
+										}
+									}
+									else if(extLinkList != null && extLinkList.size() > 0) {
+										Optional<String> extLinkOpt = GateUtil.getAnnotationText(extLinkList.get(0), cacheManager.getGateDoc());
+										if(extLinkOpt.isPresent() && extLinkOpt.get() != null && !extLinkOpt.get().equals("")) {
+											newAffiliation.setURL(normalizeText(extLinkOpt.get()).trim());
+										}
+									}
+
+									// Email of author
+									List<Annotation> emailList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_EMAIL, affil);
+									if(emailList != null && emailList.size() > 0) {
+										Optional<String> emailOpt = GateUtil.getAnnotationText(emailList.get(0), cacheManager.getGateDoc());
+										if(emailOpt.isPresent() && emailOpt.get() != null && !emailOpt.get().equals("")) {
+											newAuthor.setEmail(normalizeText(emailOpt.get()).trim());
+										}
+									}
+
+									if(newAffiliation.getName() != null && !newAffiliation.getName().equals("")) {
+										newAuthor.addAffiliation(newAffiliation);
+									}
+
+								}
+							}
+						}
+
+						resultImpl.addAuthor(newAuthor);
+					}
+				}
+			}
+		}
+	}
+
+	private static void grobidExtractAuthor(DocCacheManager cacheManager, HeaderImpl resultImpl) {
+		// Retrieve author information from GROBID analysis
+		List<Annotation> authorAnnotationList = GateUtil.getAnnInDocOrder(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, ImporterGROBID.GROBIDauthor);
+
+		Long abstractStartOffset = null;
+		Optional<Annotation> abstractAnnotation = GateUtil.getFirstAnnotationInDocOrder(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, ImporterGROBID.GROBIDabstract);
+		if(abstractAnnotation.isPresent() && abstractAnnotation.get() != null) {
+			abstractStartOffset = abstractAnnotation.get().getStartNode().getOffset();
+		}
+
+		if(authorAnnotationList != null && authorAnnotationList.size() > 0) {
+			for(Annotation authorAnn : authorAnnotationList) {
+				if(authorAnn != null && (abstractStartOffset == null || (abstractStartOffset != null && authorAnn.getEndNode().getOffset() <= abstractStartOffset)) ) {
+					String authorName = null;
+					List<Annotation> persNameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "persName", authorAnn);
+					if(persNameList != null && persNameList.size() > 0) {
+						Optional<String> authNameOpt = GateUtil.getAnnotationText(persNameList.get(0), cacheManager.getGateDoc());
+						if(authNameOpt.isPresent() && authNameOpt.get() != null && !authNameOpt.get().equals("")) {
+							authorName = authNameOpt.get();
+						}
+					}
+					
+					if(authorName != null && !authorName.trim().equals("")) {
+						AuthorImpl newAuthor = new AuthorImpl(cacheManager, normalizeText(authorName).trim(), null, null);
+						
+						// Forename
+						List<Annotation> forenameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "forename", authorAnn);
+						if(forenameList != null && forenameList.size() > 0) {
+							Optional<String> forenameOpt = GateUtil.getAnnotationText(forenameList.get(0), cacheManager.getGateDoc());
+							if(forenameOpt.isPresent() && forenameOpt.get() != null && !forenameOpt.get().equals("")) {
+								newAuthor.setFirstName(normalizeText(forenameOpt.get()).trim());
+							}
+						}
+						
+						// Surname
+						List<Annotation> surnameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "surname", authorAnn);
+						if(surnameList != null && surnameList.size() > 0) {
+							Optional<String> surnameOpt = GateUtil.getAnnotationText(surnameList.get(0), cacheManager.getGateDoc());
+							if(surnameOpt.isPresent() && surnameOpt.get() != null && !surnameOpt.get().equals("")) {
+								newAuthor.setSurname(normalizeText(surnameOpt.get()).trim());
+							}
+						}
+						
+						// Email
+						List<Annotation> emailList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "email", authorAnn);
+						if(emailList != null && emailList.size() > 0) {
+							Optional<String> emailOpt = GateUtil.getAnnotationText(emailList.get(0), cacheManager.getGateDoc());
+							if(emailOpt.isPresent() && emailOpt.get() != null && !emailOpt.get().equals("")) {
+								newAuthor.setEmail(normalizeText(emailOpt.get()).trim());
+							}
+						}
+						
+						// Affiliation
+						List<Annotation> affiliationList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "affiliation", authorAnn);
+						if(affiliationList != null && affiliationList.size() > 0) {
+							for(Annotation affil : affiliationList) {
+								if(affil != null) {
+									InstitutionImpl newAffiliation = new InstitutionImpl(cacheManager);
+									
+									// Affiliation fields:
+									// ADDED: orgName, address, country
+									// TO ADD: marker, URL, labs, instits. addr, region, settlement, acronym 
+									
+									// Name
+									List<Annotation> orgNameList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "orgName", affil);
+									if(orgNameList != null && orgNameList.size() > 0) {
+										Optional<String> orgNameOpt = GateUtil.getAnnotationText(orgNameList.get(0), cacheManager.getGateDoc());
+										if(orgNameOpt.isPresent() && orgNameOpt.get() != null && !orgNameOpt.get().equals("")) {
+											newAffiliation.setName(normalizeText(orgNameOpt.get()).trim());
+										}
+									}
+									
+									// Address
+									List<Annotation> addressList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "address", affil);
+									if(addressList != null && addressList.size() > 0) {
+										Optional<String> addressOpt = GateUtil.getAnnotationText(addressList.get(0), cacheManager.getGateDoc());
+										if(addressOpt.isPresent() && addressOpt.get() != null && !addressOpt.get().equals("")) {
+											newAffiliation.setAddress(normalizeText(addressOpt.get()).trim());
+										}
+									}
+									
+									// Country
+									List<Annotation> countryList = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterGROBID.GROBIDannSet, "country", affil);
+									if(countryList != null && countryList.size() > 0) {
+										Optional<String> countryOpt = GateUtil.getAnnotationText(countryList.get(0), cacheManager.getGateDoc());
+										if(countryOpt.isPresent() && countryOpt.get() != null && !countryOpt.get().equals("")) {
+											newAffiliation.setState(normalizeText(countryOpt.get()).trim());
+										}
+									}
+									
+									if(newAffiliation.getName() != null && !newAffiliation.getName().equals("")) {
+										newAuthor.addAffiliation(newAffiliation);
+									}
+									
+								}
+							}
+						}
+						
+						resultImpl.addAuthor(newAuthor);
+					}
+				}
+			}
+		}
 	}
 
 	/**
