@@ -974,7 +974,7 @@ public class DocParse {
 								if(sent.getType().equals(ImporterBase.h1AnnType) || sent.getType().equals(ImporterBase.h2AnnType) || 
 										sent.getType().equals(ImporterBase.h3AnnType) || sent.getType().equals(ImporterBase.h4AnnType) || sent.getType().equals(ImporterBase.h5AnnType)) {
 
-									List<Annotation> intersectingTokenAnnList = GateUtil.getAnnInDocOrderContainedAnn(doc, ImporterBase.driAnnSet, ImporterBase.tokenAnnType, sent);
+									List<Annotation> intersectingTokenAnnList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(doc, ImporterBase.driAnnSet, ImporterBase.tokenAnnType, sent);
 									if(intersectingTokenAnnList.size() > 14) {
 										annIdToRemove.add(sent.getId());
 									}

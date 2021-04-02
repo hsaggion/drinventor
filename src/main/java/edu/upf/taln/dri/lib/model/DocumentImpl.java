@@ -2574,7 +2574,7 @@ public class DocumentImpl implements Document {
 			Set<Integer> annIdToDel = new HashSet<Integer>();
 			for(Annotation sentenceAnn : sentenceAnnList) {
 				if(sentenceAnn != null) {
-					List<Annotation> tokenOfSentence = GateUtil.getAnnInDocOrderContainedAnn(cacheManager.getGateDoc(), ImporterBase.driAnnSet, ImporterBase.tokenAnnType, sentenceAnn);
+					List<Annotation> tokenOfSentence = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(cacheManager.getGateDoc(), ImporterBase.driAnnSet, ImporterBase.tokenAnnType, sentenceAnn);
 					for(Annotation tokenAnn : tokenOfSentence) {
 						if(tokenAnn != null) {
 							annIdToDel.add(tokenAnn.getId());

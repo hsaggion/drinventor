@@ -340,7 +340,7 @@ public class ImporterJATS extends ImporterBase {
 		if(abstractAnnList.size() > 0) {
 			for(Annotation abstractAnn : abstractAnnList) {
 				// Go through tokens overlapping annotation and add as sentences
-				List<Annotation> includedSentAnnList = GateUtil.getAnnInDocOrderContainedAnn(this.document, ((inputSentenceASnameAppo != null)? inputSentenceASnameAppo : ""),
+				List<Annotation> includedSentAnnList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ((inputSentenceASnameAppo != null) ? inputSentenceASnameAppo : ""),
 						inputSentenceAStypeAppo + "_OLD", abstractAnn);
 
 				Long offsetFirstSentence = Long.MAX_VALUE;
@@ -380,7 +380,7 @@ public class ImporterJATS extends ImporterBase {
 		List<Annotation> sectionAnnList = GateUtil.getAnnInDocOrder(this.document, JATSannSet, JATSsection);
 		for(Annotation sectAnn : sectionAnnList) {
 			if(sectAnn != null) {
-				List<Annotation> includedSentAnnList = GateUtil.getAnnInDocOrderContainedAnn(this.document, ((inputSentenceASnameAppo != null)? inputSentenceASnameAppo : ""),
+				List<Annotation> includedSentAnnList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ((inputSentenceASnameAppo != null) ? inputSentenceASnameAppo : ""),
 						inputSentenceAStypeAppo + "_OLD", sectAnn);
 
 				for(Annotation sentenceAnn : includedSentAnnList) {
@@ -437,7 +437,7 @@ public class ImporterJATS extends ImporterBase {
 
 			FeatureMap fm = citation.getFeatures();
 			
-			List<Annotation> names = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_AuthName, citation);
+			List<Annotation> names = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_AuthName, citation);
 			if(names != null && names.size() > 0) {
 				Integer authCount = 1;
 				for(Annotation name : names) {
@@ -445,12 +445,12 @@ public class ImporterJATS extends ImporterBase {
 					if(nameStr != null) {
 						fm.put("jats_author_" + authCount, nameStr.trim().replace("\n", " ").replaceAll(" +", " "));
 
-						List<Annotation> givenNameList = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_AuthName_GivenNames, name);
+						List<Annotation> givenNameList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_AuthName_GivenNames, name);
 						if(givenNameList != null && givenNameList.size() > 0 && GateUtil.getAnnotationText(givenNameList.get(0), this.document).orElse(null) != null) {
 							fm.put("jats_author_" + authCount + "_givenName", GateUtil.getAnnotationText(givenNameList.get(0), this.document).orElse(null).trim().replace("\n", " ").replaceAll(" +", " "));
 						}
 
-						List<Annotation> surnameList = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_AuthName_Surmane, name);
+						List<Annotation> surnameList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_AuthName_Surmane, name);
 						if(surnameList != null && surnameList.size() > 0 && GateUtil.getAnnotationText(surnameList.get(0), this.document).orElse(null) != null) {
 							fm.put("jats_author_" + authCount + "_surname", GateUtil.getAnnotationText(surnameList.get(0), this.document).orElse(null).trim().replace("\n", " ").replaceAll(" +", " "));
 						}
@@ -460,22 +460,22 @@ public class ImporterJATS extends ImporterBase {
 				}
 			}
 
-			List<Annotation> title = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Title, citation);
+			List<Annotation> title = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Title, citation);
 			if(title != null && title.size() > 0 && GateUtil.getAnnotationText(title.get(0), this.document).orElse(null) != null) {
 				fm.put("jats_title", GateUtil.getAnnotationText(title.get(0), this.document).orElse(null));
 			}
 
-			List<Annotation> source = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Source, citation);
+			List<Annotation> source = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Source, citation);
 			if(source != null && source.size() > 0 && GateUtil.getAnnotationText(source.get(0), this.document).orElse(null) != null) {
 				fm.put("jats_source", GateUtil.getAnnotationText(source.get(0), this.document).orElse(null));
 			}
 
-			List<Annotation> link = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Link, citation);
+			List<Annotation> link = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Link, citation);
 			if(link != null && link.size() > 0 && GateUtil.getAnnotationText(link.get(0), this.document).orElse(null) != null) {
 				fm.put("jats_link", GateUtil.getAnnotationText(link.get(0), this.document).orElse(null));
 			}
 
-			List<Annotation> pubIds = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_PubId, citation);
+			List<Annotation> pubIds = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_PubId, citation);
 			if(pubIds != null && pubIds.size() > 0) {
 				Integer pubIDcount = 1;
 				for(Annotation pubId : pubIds) {
@@ -483,7 +483,7 @@ public class ImporterJATS extends ImporterBase {
 					if(pubIDstr != null) {
 						fm.put("jats_pubID_" + pubIDcount, pubIDstr);
 
-						List<Annotation> pubIDtypes = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_PubId_typeFeat, pubId);
+						List<Annotation> pubIDtypes = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_PubId_typeFeat, pubId);
 						if(pubIDtypes != null && pubIDtypes.size() > 0 && GateUtil.getAnnotationText(pubIDtypes.get(0), this.document).orElse(null) != null) {
 							fm.put("jats_pubID_" + pubIDcount + "_type", GateUtil.getAnnotationText(pubIDtypes.get(0), this.document).orElse(null));
 						}
@@ -493,37 +493,37 @@ public class ImporterJATS extends ImporterBase {
 				}
 			}
 
-			List<Annotation> issue = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Issue, citation);
+			List<Annotation> issue = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Issue, citation);
 			if(issue != null && issue.size() > 0 && GateUtil.getAnnotationText(issue.get(0), this.document).orElse(null) != null) {
 				fm.put("jats_issue", GateUtil.getAnnotationText(issue.get(0), this.document).orElse(null));
 			}
 
-			List<Annotation> volume = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Volume, citation);
+			List<Annotation> volume = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Volume, citation);
 			if(volume != null && volume.size() > 0 && GateUtil.getAnnotationText(volume.get(0), this.document).orElse(null) != null) {
 				fm.put("jats_volume", GateUtil.getAnnotationText(volume.get(0), this.document).orElse(null));
 			}
 
-			List<Annotation> year = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Year, citation);
+			List<Annotation> year = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Year, citation);
 			if(year != null && year.size() > 0 && GateUtil.getAnnotationText(year.get(0), this.document).orElse(null) != null) {
 				fm.put("jats_year", GateUtil.getAnnotationText(year.get(0), this.document).orElse(null));
 			}
 
-			List<Annotation> publisherName = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_PublisherName, citation);
+			List<Annotation> publisherName = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_PublisherName, citation);
 			if(publisherName != null && publisherName.size() > 0 && GateUtil.getAnnotationText(publisherName.get(0), this.document).orElse(null) != null) {
 				fm.put("jats_publisherName", GateUtil.getAnnotationText(publisherName.get(0), this.document).orElse(null));
 			}
 
-			List<Annotation> publisherLoc = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_PublisherLoc, citation);
+			List<Annotation> publisherLoc = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_PublisherLoc, citation);
 			if(publisherLoc != null && publisherLoc.size() > 0 && GateUtil.getAnnotationText(publisherLoc.get(0), this.document).orElse(null) != null) {
 				fm.put("jats_publisherLoc", GateUtil.getAnnotationText(publisherLoc.get(0), this.document).orElse(null));
 			}
 
-			List<Annotation> fPage = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Fpage, citation);
+			List<Annotation> fPage = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Fpage, citation);
 			if(fPage != null && fPage.size() > 0 && GateUtil.getAnnotationText(fPage.get(0), this.document).orElse(null) != null) {
 				fm.put("jats_firstPage", GateUtil.getAnnotationText(fPage.get(0), this.document).orElse(null));
 			}
 
-			List<Annotation> lPage = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Lpage, citation);
+			List<Annotation> lPage = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterJATS.JATSannSet, ImporterJATS.JATScitElem_Lpage, citation);
 			if(lPage != null && lPage.size() > 0 && GateUtil.getAnnotationText(lPage.get(0), this.document).orElse(null) != null) {
 				fm.put("jats_lastPage", GateUtil.getAnnotationText(lPage.get(0), this.document).orElse(null));
 			}

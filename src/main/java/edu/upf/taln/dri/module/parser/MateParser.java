@@ -422,8 +422,8 @@ public class MateParser extends AbstractLanguageAnalyser implements ProcessingRe
 				if(this.citancesEnabled && StringUtils.isNotBlank(this.citeSpanAnnotationTypeToExclude)) {
 
 					// Define the set of cite spans that are included in the actualSentence under analysis
-					List<Annotation> citationsOverlappingActualSentenceList = GateUtil.getAnnInDocOrderContainedAnn(actualDoc, this.citeSpanAnnotationSetToExclude,
-							this.citeSpanAnnotationTypeToExclude, actualSentence);
+					List<Annotation> citationsOverlappingActualSentenceList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(actualDoc, this.citeSpanAnnotationSetToExclude,
+																																	   this.citeSpanAnnotationTypeToExclude, actualSentence);
 
 					// If there are overlapping cite spans, the sentence tokens should be modified - new actualDoc and actualSentence
 					if(citationsOverlappingActualSentenceList.size() > 0) {
@@ -586,7 +586,7 @@ public class MateParser extends AbstractLanguageAnalyser implements ProcessingRe
 				// *******************************************************************
 
 				// Generated sorted token list
-				List<Annotation> sortedTokens = GateUtil.getAnnInDocOrderContainedAnn(actualDoc, tokenAnnotationSetToAnalyze, tokenAnnotationTypeToAnalyze, actualSentence);
+				List<Annotation> sortedTokens = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(actualDoc, tokenAnnotationSetToAnalyze, tokenAnnotationTypeToAnalyze, actualSentence);
 
 				if(sortedTokens == null || sortedTokens.size() < 1) {
 					continue;
@@ -998,7 +998,7 @@ public class MateParser extends AbstractLanguageAnalyser implements ProcessingRe
 			List<Annotation> sentenceList = GateUtil.getAnnInDocOrder(this.document, sentenceAnnotationSetToAnalyze, sentenceAnnotationTypeToAnalyze);
 			if(sentenceList != null && sentenceList.size() > 0) {
 				for(Annotation sentence : sentenceList) {
-					List<Annotation> tokenList = GateUtil.getAnnInDocOrderContainedAnn(this.document, tokenAnnotationSetToAnalyze, tokenAnnotationTypeToAnalyze, sentence);
+					List<Annotation> tokenList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, tokenAnnotationSetToAnalyze, tokenAnnotationTypeToAnalyze, sentence);
 					
 					if(tokenList != null && tokenList.size() > 0) {
 						for(Annotation token : tokenList) {

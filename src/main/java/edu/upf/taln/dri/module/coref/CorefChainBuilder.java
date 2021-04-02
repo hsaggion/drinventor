@@ -261,13 +261,13 @@ public class CorefChainBuilder extends AbstractLanguageAnalyser implements Proce
 		List<Annotation> orderedSentenceList = GateUtil.getAnnInDocOrder(this.document, ImporterBase.driAnnSet, ImporterBase.sentenceAnnType);
 		for(Annotation sentence : orderedSentenceList) {
 			if(sentence != null) {
-				List<Annotation> corefInSentence = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterBase.driAnnSet, ImporterBase.coref_Candidate, sentence);
+				List<Annotation> corefInSentence = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterBase.driAnnSet, ImporterBase.coref_Candidate, sentence);
 				if(!CollectionUtils.isEmpty(corefInSentence)) {
 
 					// Order mentions by tree-traversal order - START
 					List<Integer> treeNodesIDordered = new ArrayList<Integer>();
 
-					List<Annotation> tokensOfSentence = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterBase.driAnnSet, ImporterBase.tokenAnnType, sentence); 
+					List<Annotation> tokensOfSentence = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterBase.driAnnSet, ImporterBase.tokenAnnType, sentence);
 
 					// Get root token
 					List<Annotation> rootTokenAnnList = new ArrayList<Annotation>();
@@ -1067,7 +1067,7 @@ public class CorefChainBuilder extends AbstractLanguageAnalyser implements Proce
 		for(Annotation corefAnontation : corefAnontationList) {
 			List<Annotation> overlappingSentenceList = GateUtil.getAnnInDocOrderIntersectAnn(this.document, ImporterBase.driAnnSet, ImporterBase.sentenceAnnType, corefAnontation);
 			if(overlappingSentenceList.size() == 1) {
-				List<Annotation> corefAnontationInSentenceList = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterBase.driAnnSet, ImporterBase.coref_Candidate, overlappingSentenceList.get(0));
+				List<Annotation> corefAnontationInSentenceList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterBase.driAnnSet, ImporterBase.coref_Candidate, overlappingSentenceList.get(0));
 
 				for(Annotation sameSentenceCoref : corefAnontationInSentenceList) {
 					if(sameSentenceCoref != null && !sameSentenceCoref.getId().equals(corefAnontation.getId())) {
@@ -1192,7 +1192,7 @@ public class CorefChainBuilder extends AbstractLanguageAnalyser implements Proce
 				String corefMentionType = GateUtil.getStringFeature(ann, "mentionType").orElse(null);
 				Integer corefMentionHeadId = GateUtil.getIntegerFeature(ann, "headID").orElse(null);
 				if(Util.strCompareCI(corefMentionType, "NOMINAL") || Util.strCompareCI(corefMentionType, "PROPER")) {
-					List<Annotation> mentionTokenAnnList = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterBase.driAnnSet, ImporterBase.tokenAnnType, ann);
+					List<Annotation> mentionTokenAnnList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterBase.driAnnSet, ImporterBase.tokenAnnType, ann);
 
 					if(mentionTokenAnnList != null) {
 						int headIdIndex = Integer.MAX_VALUE;

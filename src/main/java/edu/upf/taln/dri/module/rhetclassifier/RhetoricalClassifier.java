@@ -300,7 +300,7 @@ public class RhetoricalClassifier extends AbstractLanguageAnalyser implements Pr
 						AnnotationSet intersectingCitSpans = doc.getAnnotations(ImporterBase.driAnnSet).get(ImporterBase.inlineCitationAnnType).getContained(sentenceAnn.getStartNode().getOffset(), sentenceAnn.getEndNode().getOffset());
 						List<Annotation> intersectingCitSpansOrdered  = gate.Utils.inDocumentOrder(intersectingCitSpans);
 
-						List<Annotation> sentenceTokenAnn = GateUtil.getAnnInDocOrderContainedAnn(doc, ImporterBase.driAnnSet, ImporterBase.tokenAnnType, sentenceAnn);
+						List<Annotation> sentenceTokenAnn = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(doc, ImporterBase.driAnnSet, ImporterBase.tokenAnnType, sentenceAnn);
 
 						// For every token in the sentence, modify / add one to the counter of the document term frequency
 						for(Annotation token : sentenceTokenAnn) {
