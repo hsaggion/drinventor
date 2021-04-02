@@ -1,10 +1,11 @@
-package edu.upf.taln.dri.lib.model.util;
+package edu.upf.taln.dri.lib.model.util.extractor;
 
 import edu.upf.taln.dri.common.util.GateUtil;
 import edu.upf.taln.dri.lib.model.DocCacheManager;
 import edu.upf.taln.dri.lib.model.ext.Author;
 import edu.upf.taln.dri.lib.model.ext.AuthorImpl;
 import edu.upf.taln.dri.lib.model.ext.InstitutionImpl;
+import edu.upf.taln.dri.lib.model.util.ObjectGenerator;
 import edu.upf.taln.dri.module.importer.pdf.ImporterGROBID;
 import gate.Annotation;
 import gate.Document;

@@ -1,4 +1,4 @@
-package edu.upf.taln.dri.lib.model.util;
+package edu.upf.taln.dri.lib.model.util.extractor;
 
 import edu.upf.taln.dri.module.importer.SourceENUM;
 

@@ -23,6 +23,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import edu.upf.taln.dri.lib.model.ext.Author;
+import edu.upf.taln.dri.lib.model.util.extractor.Extractor;
+import edu.upf.taln.dri.lib.model.util.extractor.ExtractorFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.log4j.Logger;
