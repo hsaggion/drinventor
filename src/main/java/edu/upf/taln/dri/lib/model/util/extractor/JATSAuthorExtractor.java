@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class JATSAuthorExtractor implements Extractor{
+public class JATSAuthorExtractor extends Extractor{
 	public List<Author> extract(DocCacheManager cacheManager) {
 		ArrayList<Author> authorList = new ArrayList<>();
 
@@ -45,7 +45,7 @@ public class JATSAuthorExtractor implements Extractor{
 					}
 
 					if(authorName != null && !authorName.trim().equals("")) {
-						AuthorImpl newAuthor = new AuthorImpl(cacheManager, ObjectGenerator.normalizeText(authorName).trim(), null, null);
+						AuthorImpl newAuthor = new AuthorImpl(cacheManager, normalizeText(authorName).trim(), null, null);
 
 						// Forename
 						List<Annotation> forenameList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATScontribGivenName, authorAnn);
@@ -53,7 +53,7 @@ public class JATSAuthorExtractor implements Extractor{
 							Optional<String> forenameOpt = GateUtil.getAnnotationText(forenameList.get(0), cacheManager.getGateDoc());
 							if(forenameOpt.isPresent()) {
 								if (!forenameOpt.get().equals("")) {
-									newAuthor.setFirstName(ObjectGenerator.normalizeText(forenameOpt.get()).trim());
+									newAuthor.setFirstName(normalizeText(forenameOpt.get()).trim());
 								}
 							}
 						}
@@ -64,7 +64,7 @@ public class JATSAuthorExtractor implements Extractor{
 							Optional<String> surnameOpt = GateUtil.getAnnotationText(surnameList.get(0), cacheManager.getGateDoc());
 							if(surnameOpt.isPresent()) {
 								if (!surnameOpt.get().equals("")) {
-									newAuthor.setSurname(ObjectGenerator.normalizeText(surnameOpt.get()).trim());
+									newAuthor.setSurname(normalizeText(surnameOpt.get()).trim());
 								}
 							}
 						}
@@ -77,7 +77,7 @@ public class JATSAuthorExtractor implements Extractor{
 								Optional<String> xrefOpt = GateUtil.getAnnotationText(xrefAnn, cacheManager.getGateDoc());
 								if(xrefOpt.isPresent()) {
 									if (!xrefOpt.get().equals("")) {
-										xrefIDs.add(ObjectGenerator.normalizeText(xrefOpt.get()).trim());
+										xrefIDs.add(normalizeText(xrefOpt.get()).trim());
 									}
 								}
 							}
@@ -96,7 +96,7 @@ public class JATSAuthorExtractor implements Extractor{
 
 									// Full text
 									newAffiliation.setFullText( (GateUtil.getAnnotationText(affil, cacheManager.getGateDoc()).orElse(null) != null) ?
-																ObjectGenerator.normalizeText(GateUtil.getAnnotationText(affil, cacheManager.getGateDoc()).orElse(null).trim()) : null);
+																normalizeText(GateUtil.getAnnotationText(affil, cacheManager.getGateDoc()).orElse(null).trim()) : null);
 
 									// Name
 									List<Annotation> orgNameList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(cacheManager.getGateDoc(), ImporterJATS.JATSannSet, ImporterJATS.JATSaffiliationAddressLine_INSTITUTION, affil);
@@ -104,7 +104,7 @@ public class JATSAuthorExtractor implements Extractor{
 										Optional<String> orgNameOpt = GateUtil.getAnnotationText(orgNameList.get(0), cacheManager.getGateDoc());
 										if(orgNameOpt.isPresent()) {
 											if (!orgNameOpt.get().equals("")) {
-												newAffiliation.setName(ObjectGenerator.normalizeText(orgNameOpt.get()).trim());
+												newAffiliation.setName(normalizeText(orgNameOpt.get()).trim());
 											}
 										}
 									}
@@ -115,7 +115,7 @@ public class JATSAuthorExtractor implements Extractor{
 										Optional<String> addressOpt = GateUtil.getAnnotationText(addressList.get(0), cacheManager.getGateDoc());
 										if(addressOpt.isPresent()) {
 											if (!addressOpt.get().equals("")) {
-												newAffiliation.setAddress(ObjectGenerator.normalizeText(addressOpt.get()).trim());
+												newAffiliation.setAddress(normalizeText(addressOpt.get()).trim());
 											}
 										}
 									}
@@ -126,7 +126,7 @@ public class JATSAuthorExtractor implements Extractor{
 										Optional<String> countryOpt = GateUtil.getAnnotationText(countryList.get(0), cacheManager.getGateDoc());
 										if(countryOpt.isPresent()) {
 											if (!countryOpt.get().equals("")) {
-												newAffiliation.setState(ObjectGenerator.normalizeText(countryOpt.get()).trim());
+												newAffiliation.setState(normalizeText(countryOpt.get()).trim());
 											}
 										}
 									}
@@ -138,7 +138,7 @@ public class JATSAuthorExtractor implements Extractor{
 										Optional<String> uriOpt = GateUtil.getAnnotationText(uriList.get(0), cacheManager.getGateDoc());
 										if(uriOpt.isPresent()) {
 											if (!uriOpt.get().equals("")) {
-												newAffiliation.setURL(ObjectGenerator.normalizeText(uriOpt.get()).trim());
+												newAffiliation.setURL(normalizeText(uriOpt.get()).trim());
 											}
 										}
 									}
@@ -146,7 +146,7 @@ public class JATSAuthorExtractor implements Extractor{
 										Optional<String> extLinkOpt = GateUtil.getAnnotationText(extLinkList.get(0), cacheManager.getGateDoc());
 										if(extLinkOpt.isPresent()) {
 											if (!extLinkOpt.get().equals("")) {
-												newAffiliation.setURL(ObjectGenerator.normalizeText(extLinkOpt.get()).trim());
+												newAffiliation.setURL(normalizeText(extLinkOpt.get()).trim());
 											}
 										}
 									}
@@ -157,7 +157,7 @@ public class JATSAuthorExtractor implements Extractor{
 										Optional<String> emailOpt = GateUtil.getAnnotationText(emailList.get(0), cacheManager.getGateDoc());
 										if(emailOpt.isPresent()) {
 											if (!emailOpt.get().equals("")) {
-												newAuthor.setEmail(ObjectGenerator.normalizeText(emailOpt.get()).trim());
+												newAuthor.setEmail(normalizeText(emailOpt.get()).trim());
 											}
 										}
 									}

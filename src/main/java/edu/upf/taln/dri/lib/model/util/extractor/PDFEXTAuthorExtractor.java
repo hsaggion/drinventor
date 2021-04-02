@@ -13,7 +13,7 @@ import gate.Document;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PDFEXTAuthorExtractor implements Extractor{
+public class PDFEXTAuthorExtractor extends Extractor{
 
 	public List<Author> extract(DocCacheManager cacheManager) {
 		ArrayList<Author> authorList = new ArrayList<>();
@@ -33,7 +33,7 @@ public class PDFEXTAuthorExtractor implements Extractor{
 					String authorEmailId = GateUtil.getStringFeature(authorAnn, "refemail").orElse(null);
 
 					if (authorFullName != null && !authorFullName.trim().equals("")) {
-						AuthorImpl newAuthor = new AuthorImpl(cacheManager, ObjectGenerator.normalizeText(authorFullName).trim(), null, null);
+						AuthorImpl newAuthor = new AuthorImpl(cacheManager, normalizeText(authorFullName).trim(), null, null);
 
 						if (authorAffiId != null && affiliationAnnotationList != null) {
 							for (Annotation affiliation : affiliationAnnotationList) {
@@ -42,7 +42,7 @@ public class PDFEXTAuthorExtractor implements Extractor{
 									String affiliationID = GateUtil.getStringFeature(affiliation, "id").orElse(null);
 									if (affiliationText != null && affiliationID != null && affiliationID.trim().equals(authorAffiId) && !affiliationText.trim().equals("")) {
 										InstitutionImpl institution = new InstitutionImpl(cacheManager);
-										institution.setFullText(ObjectGenerator.normalizeText(affiliationText).trim());
+										institution.setFullText(normalizeText(affiliationText).trim());
 										newAuthor.addAffiliation(institution);
 									}
 								}
@@ -55,7 +55,7 @@ public class PDFEXTAuthorExtractor implements Extractor{
 									String emailText = GateUtil.getAnnotationText(email, gateDoc).orElse(null);
 									String emailID = GateUtil.getStringFeature(email, "id").orElse(null);
 									if (emailText != null && emailID != null && emailID.trim().equals(authorEmailId) && !emailText.trim().equals("")) {
-										newAuthor.setEmail(ObjectGenerator.normalizeText(emailText).trim());
+										newAuthor.setEmail(normalizeText(emailText).trim());
 									}
 								}
 							}

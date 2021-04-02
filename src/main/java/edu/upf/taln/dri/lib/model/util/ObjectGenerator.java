@@ -2203,16 +2203,5 @@ public class ObjectGenerator {
 
 		return result;
 	}
-	
-	
-	public static String normalizeText(String inputText) {
-		if(inputText != null) {
-			inputText = inputText.replaceAll("\t", " ");
-			inputText = inputText.replaceAll("\\s+", " ");
-			inputText = inputText.trim();
-		}
-		return inputText;
-	}
-
 }
 

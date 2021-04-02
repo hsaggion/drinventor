@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class GROBIDAuthorExtractor implements Extractor{
+public class GROBIDAuthorExtractor extends Extractor{
 	public List<Author> extract(DocCacheManager cacheManager) {
 		ArrayList<Author> authorList = new ArrayList<>();
 
@@ -44,7 +44,7 @@ public class GROBIDAuthorExtractor implements Extractor{
 					}
 
 					if(authorName != null && !authorName.trim().equals("")) {
-						AuthorImpl newAuthor = new AuthorImpl(cacheManager, ObjectGenerator.normalizeText(authorName).trim(), null, null);
+						AuthorImpl newAuthor = new AuthorImpl(cacheManager, normalizeText(authorName).trim(), null, null);
 
 						// Forename
 						List<Annotation> forenameList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(gateDocument, ImporterGROBID.GROBIDannSet, "forename", authorAnn);
@@ -52,7 +52,7 @@ public class GROBIDAuthorExtractor implements Extractor{
 							Optional<String> forenameOpt = GateUtil.getAnnotationText(forenameList.get(0), gateDocument);
 							if(forenameOpt.isPresent()) {
 								if (!forenameOpt.get().equals("")) {
-									newAuthor.setFirstName(ObjectGenerator.normalizeText(forenameOpt.get()).trim());
+									newAuthor.setFirstName(normalizeText(forenameOpt.get()).trim());
 								}
 							}
 						}
@@ -63,7 +63,7 @@ public class GROBIDAuthorExtractor implements Extractor{
 							Optional<String> surnameOpt = GateUtil.getAnnotationText(surnameList.get(0), gateDocument);
 							if(surnameOpt.isPresent()) {
 								if (!surnameOpt.get().equals("")) {
-									newAuthor.setSurname(ObjectGenerator.normalizeText(surnameOpt.get()).trim());
+									newAuthor.setSurname(normalizeText(surnameOpt.get()).trim());
 								}
 							}
 						}
@@ -74,7 +74,7 @@ public class GROBIDAuthorExtractor implements Extractor{
 							Optional<String> emailOpt = GateUtil.getAnnotationText(emailList.get(0), gateDocument);
 							if(emailOpt.isPresent()) {
 								if (!emailOpt.get().equals("")) {
-									newAuthor.setEmail(ObjectGenerator.normalizeText(emailOpt.get()).trim());
+									newAuthor.setEmail(normalizeText(emailOpt.get()).trim());
 								}
 							}
 						}
@@ -96,7 +96,7 @@ public class GROBIDAuthorExtractor implements Extractor{
 										Optional<String> orgNameOpt = GateUtil.getAnnotationText(orgNameList.get(0), gateDocument);
 										if(orgNameOpt.isPresent()) {
 											if (!orgNameOpt.get().equals("")) {
-												newAffiliation.setName(ObjectGenerator.normalizeText(orgNameOpt.get()).trim());
+												newAffiliation.setName(normalizeText(orgNameOpt.get()).trim());
 											}
 										}
 									}
@@ -107,7 +107,7 @@ public class GROBIDAuthorExtractor implements Extractor{
 										Optional<String> addressOpt = GateUtil.getAnnotationText(addressList.get(0), gateDocument);
 										if(addressOpt.isPresent()) {
 											if (!addressOpt.get().equals("")) {
-												newAffiliation.setAddress(ObjectGenerator.normalizeText(addressOpt.get()).trim());
+												newAffiliation.setAddress(normalizeText(addressOpt.get()).trim());
 											}
 										}
 									}
@@ -118,7 +118,7 @@ public class GROBIDAuthorExtractor implements Extractor{
 										Optional<String> countryOpt = GateUtil.getAnnotationText(countryList.get(0), gateDocument);
 										if(countryOpt.isPresent()) {
 											if (!countryOpt.get().equals("")) {
-												newAffiliation.setState(ObjectGenerator.normalizeText(countryOpt.get()).trim());
+												newAffiliation.setState(normalizeText(countryOpt.get()).trim());
 											}
 										}
 									}

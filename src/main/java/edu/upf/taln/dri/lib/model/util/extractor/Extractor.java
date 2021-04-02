@@ -5,9 +5,16 @@ import edu.upf.taln.dri.lib.model.ext.Author;
 
 import java.util.List;
 
-public interface Extractor {
+public abstract class Extractor {
 
-	List<Author> extract(DocCacheManager cacheManager);
+	abstract public List<Author> extract(DocCacheManager cacheManager);
 
-
+	public static String normalizeText(String inputText) {
+		if(inputText != null) {
+			inputText = inputText.replaceAll("\t", " ");
+			inputText = inputText.replaceAll("\\s+", " ");
+			inputText = inputText.trim();
+		}
+		return inputText;
+	}
 }
