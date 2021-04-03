@@ -261,11 +261,21 @@ public class HeaderImpl extends BaseDocumentElem implements Header {
 	// Other methods
 	public void addAuthor(Author auth) {
 		if(auth != null) {
-			if(this.authorList == null) {
+			if (this.authorList == null) {
 				this.authorList = new ArrayList<Author>();
 			}
 			this.authorList.add(auth);
 		}
+	}
+
+	public void addAuthors(List<Author> authorList){
+		if (authorList != null) {
+			if (this.authorList == null) {
+				this.authorList = new ArrayList<>();
+			}
+			this.authorList.addAll(authorList);
+		}
+
 	}
 
 	public void addInstitution(Institution inst) {

@@ -161,7 +161,7 @@ public class DERIV_CITSprevNextSentencesC implements FeatCalculator<Double, Anno
 		switch(this.type) {
 		case PREVIOUS_SENT_CIT_SPAN:
 			if(sentBeforeInSection != null) {
-				List<Annotation> citSpanPrevious = GateUtil.getAnnInDocOrderContainedAnn(doc.getGateDoc(), ImporterBase.driAnnSet, ImporterBase.inlineCitationAnnType, sentBeforeInSection);
+				List<Annotation> citSpanPrevious = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(doc.getGateDoc(), ImporterBase.driAnnSet, ImporterBase.inlineCitationAnnType, sentBeforeInSection);
 				if(citSpanPrevious != null && citSpanPrevious.size() > 0) {
 					countResult = (double) citSpanPrevious.size();
 				}
@@ -169,7 +169,7 @@ public class DERIV_CITSprevNextSentencesC implements FeatCalculator<Double, Anno
 			break;
 		case PREVIOUS_SENT_CIT_MARKER:
 			if(sentBeforeInSection != null) {
-				List<Annotation> citMarkerPrevious = GateUtil.getAnnInDocOrderContainedAnn(doc.getGateDoc(), ImporterBase.driAnnSet, ImporterBase.inlineCitationMarkerAnnType, sentBeforeInSection);
+				List<Annotation> citMarkerPrevious = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(doc.getGateDoc(), ImporterBase.driAnnSet, ImporterBase.inlineCitationMarkerAnnType, sentBeforeInSection);
 				if(citMarkerPrevious != null && citMarkerPrevious.size() > 0) {
 					countResult = (double) citMarkerPrevious.size();
 				}
@@ -177,7 +177,7 @@ public class DERIV_CITSprevNextSentencesC implements FeatCalculator<Double, Anno
 			break;
 		case NEXT_SENT_CIT_SPAN:
 			if(sentenceAfterInSection != null) {
-				List<Annotation> citSpanAfter = GateUtil.getAnnInDocOrderContainedAnn(doc.getGateDoc(), ImporterBase.driAnnSet, ImporterBase.inlineCitationAnnType, sentenceAfterInSection);
+				List<Annotation> citSpanAfter = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(doc.getGateDoc(), ImporterBase.driAnnSet, ImporterBase.inlineCitationAnnType, sentenceAfterInSection);
 				if(citSpanAfter != null && citSpanAfter.size() > 0) {
 					countResult = (double) citSpanAfter.size();
 				}
@@ -185,7 +185,7 @@ public class DERIV_CITSprevNextSentencesC implements FeatCalculator<Double, Anno
 			break;
 		case NEXT_SENT_CIT_MARKER:
 			if(sentenceAfterInSection != null) {
-				List<Annotation> citMarkerAfter = GateUtil.getAnnInDocOrderContainedAnn(doc.getGateDoc(), ImporterBase.driAnnSet, ImporterBase.inlineCitationMarkerAnnType, sentenceAfterInSection);
+				List<Annotation> citMarkerAfter = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(doc.getGateDoc(), ImporterBase.driAnnSet, ImporterBase.inlineCitationMarkerAnnType, sentenceAfterInSection);
 				if(citMarkerAfter != null && citMarkerAfter.size() > 0) {
 					countResult = (double) citMarkerAfter.size();
 				}

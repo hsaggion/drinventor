@@ -163,7 +163,7 @@ public class TermAnnotator  extends AbstractLanguageAnalyser implements Processi
 		// Browse all sentences of the documents
 		for(Annotation sentenceAnn : sentenceAnnotationList) {
 			if(sentenceAnn != null) {
-				List<Annotation> tokenOfSentenceList = GateUtil.getAnnInDocOrderContainedAnn(this.document, inputTokenASnameAppo, inputTokenAStypeAppo, sentenceAnn);
+				List<Annotation> tokenOfSentenceList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, inputTokenASnameAppo, inputTokenAStypeAppo, sentenceAnn);
 
 				// POS sequence patterns
 				/*

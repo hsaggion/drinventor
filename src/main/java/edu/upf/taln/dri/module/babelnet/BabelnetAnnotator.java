@@ -224,13 +224,13 @@ public class BabelnetAnnotator extends AbstractLanguageAnalyser implements Proce
 
 			for(Annotation sentenceAnn : sentenceGroup) {
 				if(sentenceAnn != null) {
-					List<Annotation> tokenOfSentenceList = GateUtil.getAnnInDocOrderContainedAnn(this.document, tokenAnnotationSetToAnalyze, tokenAnnotationTypeToAnalyze, sentenceAnn);
+					List<Annotation> tokenOfSentenceList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, tokenAnnotationSetToAnalyze, tokenAnnotationTypeToAnalyze, sentenceAnn);
 
 					// Get all tokens of a sentence
 					int tokenListBeforeSentenceTokenAddition = babelfyTokenListToDisambiguate.size();
 
 					// Get all in citation tokens
-					List<Annotation> citSpanAnnList = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterBase.driAnnSet, ImporterBase.inlineCitationAnnType, sentenceAnn);
+					List<Annotation> citSpanAnnList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterBase.driAnnSet, ImporterBase.inlineCitationAnnType, sentenceAnn);
 
 					for(Annotation tokenAnn : tokenOfSentenceList) {
 						if(tokenAnn != null) {

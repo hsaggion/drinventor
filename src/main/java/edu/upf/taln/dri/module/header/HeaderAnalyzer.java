@@ -346,7 +346,7 @@ public class HeaderAnalyzer  extends AbstractLanguageAnalyser implements Process
 			if(sentText.isPresent()) {
 
 				// A) Annotate header tokens equals to author name token by feature personElem equal to true
-				List<Annotation> headerSentenceTokenList = GateUtil.getAnnInDocOrderContainedAnn(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Token, headerSentence);
+				List<Annotation> headerSentenceTokenList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Token, headerSentence);
 				headerSentenceTokenList.stream().forEach((tokenAnn) -> {
 					Optional<String> tokenText = GateUtil.getAnnotationText(tokenAnn, headerDoc);
 					if(tokenText.isPresent() && sanitizedAuthorNamePartsList.contains(tokenText.get().toLowerCase())) {
@@ -379,7 +379,7 @@ public class HeaderAnalyzer  extends AbstractLanguageAnalyser implements Process
 				});
 
 				// B.2 - PATTERN: mayorType = AUTHOR && minorType = full && not intersecting email or other authors
-				List<Annotation> headerLookupList = GateUtil.getAnnInDocOrderContainedAnn(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Lookup, headerSentence);
+				List<Annotation> headerLookupList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Lookup, headerSentence);
 				headerLookupList.stream().forEach((lookup) -> {
 					String lookupMajorType = GateUtil.getStringFeature(lookup, "mayorType").orElse(null);
 					String lookupMinorType = GateUtil.getStringFeature(lookup, "minorType").orElse(null);
@@ -399,7 +399,7 @@ public class HeaderAnalyzer  extends AbstractLanguageAnalyser implements Process
 				});
 
 				// B.3 - If there are two author annotations next one the other merge them
-				List<Annotation> headerAuthorList = GateUtil.getAnnInDocOrderContainedAnn(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Author, headerSentence);
+				List<Annotation> headerAuthorList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Author, headerSentence);
 				Set<Annotation> toDel = new HashSet<Annotation>();
 				headerAuthorList.stream().forEach((author1) -> {
 					if(author1 != null && headerAuthorList.size() > (headerAuthorList.indexOf(author1) + 1) ) {
@@ -442,7 +442,7 @@ public class HeaderAnalyzer  extends AbstractLanguageAnalyser implements Process
 			Optional<String> sentText = GateUtil.getAnnotationText(headerSentence, headerDoc);
 
 			if(sentText.isPresent()) {
-				List<Annotation> intersectingLookup = GateUtil.getAnnInDocOrderContainedAnn(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Lookup, headerSentence);
+				List<Annotation> intersectingLookup = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Lookup, headerSentence);
 
 				intersectingLookup.stream().forEach((lookup) -> {
 					String lookupMajorType = GateUtil.getStringFeature(lookup, "mayorType").orElse(null);
@@ -504,7 +504,7 @@ public class HeaderAnalyzer  extends AbstractLanguageAnalyser implements Process
 
 
 				// Merge subsequent affiliations if no alphanumeric text is not contained in between
-				List<Annotation> headerAffiliationList = GateUtil.getAnnInDocOrderContainedAnn(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Affiliation, headerSentence);
+				List<Annotation> headerAffiliationList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Affiliation, headerSentence);
 				Set<Annotation> toDel = new HashSet<Annotation>();
 				headerAffiliationList.stream().forEach((affil1) -> {
 					if(affil1 != null && headerAffiliationList.size() > (headerAffiliationList.indexOf(affil1) + 1) ) {
@@ -548,8 +548,8 @@ public class HeaderAnalyzer  extends AbstractLanguageAnalyser implements Process
 
 		for(Annotation headerSentence : headerSentenceList) {
 
-			List<Annotation> authorSentenceList = GateUtil.getAnnInDocOrderContainedAnn(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Author, headerSentence);
-			List<Annotation> affilSentenceList = GateUtil.getAnnInDocOrderContainedAnn(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Affiliation, headerSentence);
+			List<Annotation> authorSentenceList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Author, headerSentence);
+			List<Annotation> affilSentenceList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(headerDoc, ImporterBase.headerDOC_AnnSet, ImporterBase.headerDOC_Affiliation, headerSentence);
 
 			// Author
 			authorSentenceList.stream().forEach((author) -> {

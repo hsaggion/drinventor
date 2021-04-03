@@ -351,7 +351,7 @@ public class GateUtil {
 	 * @param endOffset
 	 * @return
 	 */
-	public static List<Annotation> getAnnInDocOrderContainedAnn(Document doc, String annSet, String annType, Annotation includedInAnn) {
+	public static List<Annotation> getAnnotationInDocumentOrderContainedAnnotation(Document doc, String annSet, String annType, Annotation includedInAnn) {
 		List<Annotation> result = new ArrayList<Annotation>();
 		
 		if(annSet != null && StringUtils.isNotBlank(annType) && includedInAnn != null) {

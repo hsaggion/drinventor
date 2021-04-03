@@ -263,8 +263,8 @@ public class JSONgenerator {
 						if(affil != null) {
 							try {
 								// Set Babelnet synset occurrences
-								List<Annotation> babelnetSynsetOccList = GateUtil.getAnnInDocOrderContainedAnn(docImpl.cacheManager.getGateDoc(), ImporterBase.babelnet_AnnSet,
-										ImporterBase.babelnet_DisItem, affil);
+								List<Annotation> babelnetSynsetOccList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(docImpl.cacheManager.getGateDoc(), ImporterBase.babelnet_AnnSet,
+																																  ImporterBase.babelnet_DisItem, affil);
 								for(Annotation babelnetSynsetOcc : babelnetSynsetOccList) {
 									if(babelnetSynsetOcc != null) {
 
@@ -314,8 +314,8 @@ public class JSONgenerator {
 						if(keyw != null) {
 							try {
 								// Set Babelnet synset occurrences
-								List<Annotation> babelnetSynsetOccList = GateUtil.getAnnInDocOrderContainedAnn(docImpl.cacheManager.getGateDoc(), ImporterBase.babelnet_AnnSet,
-										ImporterBase.babelnet_DisItem, keyw);
+								List<Annotation> babelnetSynsetOccList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(docImpl.cacheManager.getGateDoc(), ImporterBase.babelnet_AnnSet,
+																																  ImporterBase.babelnet_DisItem, keyw);
 								for(Annotation babelnetSynsetOcc : babelnetSynsetOccList) {
 									if(babelnetSynsetOcc != null) {
 

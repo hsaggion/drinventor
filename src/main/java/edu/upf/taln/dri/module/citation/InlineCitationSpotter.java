@@ -554,11 +554,11 @@ public class InlineCitationSpotter  extends AbstractLanguageAnalyser implements 
 		List<Annotation> biblioEntryList = GateUtil.getAnnInDocOrder(this.document, ImporterBase.driAnnSet, ImporterBase.bibEntryAnnType);
 		Set<Annotation> citMarkerToRemoveSet = new HashSet<Annotation>();
 		for(Annotation bibEntry : biblioEntryList) {
-			List<Annotation> containedCitMarkerList = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterBase.driAnnSet, ImporterBase.inlineCitationMarkerAnnType, bibEntry);
+			List<Annotation> containedCitMarkerList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterBase.driAnnSet, ImporterBase.inlineCitationMarkerAnnType, bibEntry);
 			for(Annotation containedCitMarker : containedCitMarkerList) {
 				citMarkerToRemoveSet.add(containedCitMarker);
 			}
-			List<Annotation> containedCitSpanList = GateUtil.getAnnInDocOrderContainedAnn(this.document, ImporterBase.driAnnSet, ImporterBase.inlineCitationAnnType, bibEntry);
+			List<Annotation> containedCitSpanList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(this.document, ImporterBase.driAnnSet, ImporterBase.inlineCitationAnnType, bibEntry);
 			for(Annotation containedCitSpan : containedCitSpanList) {
 				citMarkerToRemoveSet.add(containedCitSpan);
 			}

@@ -83,8 +83,8 @@ public class RelaxedMatchSieve extends Sieve {
 		String corefMentionType = GateUtil.getStringFeature(coreMentionAnn, "mentionType").orElse(null);
 		Integer corefMentionHeadId = GateUtil.getIntegerFeature(coreMentionAnn, "headID").orElse(null);
 		if(Util.strCompareCI(corefMentionType, "NOMINAL") || Util.strCompareCI(corefMentionType, "PROPER")) {
-			List<Annotation> mentionTokenAnnList = GateUtil.getAnnInDocOrderContainedAnn(corefBuilder.getDocument(),
-					ImporterBase.driAnnSet, ImporterBase.tokenAnnType, coreMentionAnn);
+			List<Annotation> mentionTokenAnnList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(corefBuilder.getDocument(),
+																											ImporterBase.driAnnSet, ImporterBase.tokenAnnType, coreMentionAnn);
 			
 			if(mentionTokenAnnList != null) {
 				int headIdIndex = Integer.MAX_VALUE;
@@ -130,8 +130,8 @@ public class RelaxedMatchSieve extends Sieve {
 		String antecMentionType = GateUtil.getStringFeature(antecedentCandidateAnn, "mentionType").orElse(null);
 		Integer antecMentionHeadId = GateUtil.getIntegerFeature(antecedentCandidateAnn, "headID").orElse(null);
 		if(Util.strCompareCI(antecMentionType, "NOMINAL") || Util.strCompareCI(antecMentionType, "PROPER")) {
-			List<Annotation> mentionTokenAnnList = GateUtil.getAnnInDocOrderContainedAnn(corefBuilder.getDocument(),
-					ImporterBase.driAnnSet, ImporterBase.tokenAnnType, antecedentCandidateAnn);
+			List<Annotation> mentionTokenAnnList = GateUtil.getAnnotationInDocumentOrderContainedAnnotation(corefBuilder.getDocument(),
+																											ImporterBase.driAnnSet, ImporterBase.tokenAnnType, antecedentCandidateAnn);
 			
 			if(mentionTokenAnnList != null) {
 				int headIdIndex = Integer.MAX_VALUE;
